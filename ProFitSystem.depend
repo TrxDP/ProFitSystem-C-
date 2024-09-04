@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1584205420 source:c:\users\trx\desktop\profitsystem\profitsystem\main.cpp
+	<iostream>
+
+1725465789 source:c:\users\trx\desktop\profitsystem\profitsystem\usuario.cpp
+	"Usuario.h"
+
+1725466455 c:\users\trx\desktop\profitsystem\profitsystem\usuario.h
+	<string>
+	<iostream>
+
