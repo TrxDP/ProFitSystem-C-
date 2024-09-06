@@ -6,7 +6,15 @@
 1725580842 source:c:\users\trx\desktop\profitsystem\profitsystem\usuario.cpp
 	"Usuario.h"
 
-1725580187 c:\users\trx\desktop\profitsystem\profitsystem\usuario.h
+1725599752 c:\users\trx\desktop\profitsystem\profitsystem\usuario.h
 	<string>
 	<iostream>
+
+1725599219 source:c:\users\trx\desktop\profitsystem\profitsystem\cliente.cpp
+	"Cliente.h"
+	"Usuario.h"
+
+1725599615 c:\users\trx\desktop\profitsystem\profitsystem\cliente.h
+	<vector>
+	"Usuario.h"
 
