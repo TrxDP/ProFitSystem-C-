@@ -32,3 +32,10 @@
 1725669021 c:\users\trx\desktop\profitsystem\profitsystem\actividad.h
 	<iostream>
 
+1725669967 source:c:\users\trx\desktop\profitsystem\profitsystem\reserva.cpp
+	"Reserva.h"
+
+1725669968 c:\users\trx\desktop\profitsystem\profitsystem\reserva.h
+	<iostream>
+	<string>
+
