@@ -34,8 +34,20 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Actividad.cpp" />
+		<Unit filename="Actividad.h" />
+		<Unit filename="Administrador.cpp" />
+		<Unit filename="Administrador.h" />
 		<Unit filename="Cliente.cpp" />
 		<Unit filename="Cliente.h" />
+		<Unit filename="Entrenador.cpp" />
+		<Unit filename="Entrenador.h" />
+		<Unit filename="Membresia.cpp" />
+		<Unit filename="Membresia.h" />
+		<Unit filename="Pago.cpp" />
+		<Unit filename="Pago.h" />
+		<Unit filename="Reserva.cpp" />
+		<Unit filename="Reserva.h" />
 		<Unit filename="Usuario.cpp" />
 		<Unit filename="Usuario.h" />
 		<Unit filename="main.cpp" />
