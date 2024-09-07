@@ -29,7 +29,9 @@ void Administrador::modificarUsuario(int usuarioId, string nuevoNombre, string n
             cout << "Usuario modificado: " << nuevoNombre << endl;
             return;
         }
+    }
 }
+
 
 void Administrador::eliminarUsuario(int usuarioId){
     for (auto it = usuarios.begin(); it != usuarios.end(); ++it) {
@@ -60,4 +62,5 @@ void Administrador::consultarEstadisticas(){
     cout << "Consultando estadísticas del gimnasio..." << endl;
     // Aquí se implementarían estadísticas como asistencia, usuarios activos, etc.
 }
+
 

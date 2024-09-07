@@ -21,7 +21,7 @@
 1725665009 source:c:\users\trx\desktop\profitsystem\profitsystem\entrenador.cpp
 	"Entrenador.h"
 
-1725664957 c:\users\trx\desktop\profitsystem\profitsystem\entrenador.h
+1725743178 c:\users\trx\desktop\profitsystem\profitsystem\entrenador.h
 	<vector>
 	<map>
 	"Usuario.h"
@@ -45,4 +45,26 @@
 1725671028 c:\users\trx\desktop\profitsystem\profitsystem\pago.h
 	<iostream>
 	<string>
+
+1725744999 source:c:\users\trx\desktop\profitsystem\profitsystem\membresia.cpp
+	"Membresia.h"
+
+1725740924 c:\users\trx\desktop\profitsystem\profitsystem\membresia.h
+	<iostream>
+	<string>
+
+1725746259 source:c:\users\trx\desktop\profitsystem\profitsystem\horario.cpp
+	"Horario.h"
+
+1725746851 c:\users\trx\desktop\profitsystem\profitsystem\horario.h
+	<iostream>
+	<string>
+	<vector>
+
+1725749365 source:c:\users\trx\desktop\profitsystem\profitsystem\administrador.cpp
+	"Administrador.h"
+
+1725665345 c:\users\trx\desktop\profitsystem\profitsystem\administrador.h
+	<vector>
+	"Usuario.h"
 
