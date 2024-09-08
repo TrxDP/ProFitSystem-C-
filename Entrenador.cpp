@@ -13,12 +13,29 @@ Entrenador::~Entrenador()
     //dtor
 
 }
+// Métodos getters
+vector<string> Entrenador::getEspecializaciones(){
+    return especializaciones;
+}
+
+vector<string> Entrenador::getActividades(){
+    return actividades;
+}
+
+// Métodos setters
+void Entrenador::setEspecializaciones(vector<string>& _especializaciones){
+    especializaciones=_especializaciones;
+}
+
+void Entrenador::setExperiencia(int _experiencia){
+    experiencia=_experiencia;
+}
 
 
 void Entrenador::consultarClientes(){
     cout << "Clientes asignados al entrenador " << nombre << ": " << endl;
-    for (const auto& cliente : clientes) {
-        cout << cliente << endl;
+    for(auto& cliente : clientes){
+        cout<<cliente<<endl;
     }
 }
 
@@ -41,9 +58,14 @@ void Entrenador::visualizarHorarios(){
     }
 }
 
+void Entrenador::agregarEspecializacion(string especializacion {
+    especializaciones.push_back(especializacion);
+    cout << "Especialización '" << especializacion << "' agregada al entrenador " << getNombre() << endl;
+}
+
 void Entrenador::agregarHorario(Horario horario){
     horarios.push_back(horario);
-        cout << "Horario agregado para el entrenador " << getNombre() << " el día " << horario.getDia() << " de " << horario.getHoraInicio() << " a " << horario.getHoraFin() << "." << endl;
+    cout << "Horario agregado para el entrenador " << getNombre() << " el día " << horario.getDia() << " de " << horario.getHoraInicio() << " a " << horario.getHoraFin() << "." << endl;
 }
 
 void Entrenador::agregarActividad(string actividad){
@@ -83,3 +105,31 @@ void Entrenador::eliminarActividad(string actividad) {
     cout << "Actividad '" << actividad << "' no encontrada." << endl;
 }
 
+void Entrenador::agregarCliente(Cliente cliente) {
+    clientes.push_back(cliente);
+    cout << "Cliente " << cliente.getNombre() << " agregado al entrenador " << getNombre() << "." << endl;
+}
+
+void Entrenador::mostrarHorarios(){
+    cout << "Horarios del entrenador " << getNombre() << ":" << endl;
+    for (const Horario& horario : horarios) {
+        horario.mostrarHorario();
+    }
+}
+
+void Entrenador::mostrarClientes(){
+    cout << "Clientes del entrenador " << getNombre() << ":" << endl;
+    for (const Cliente& cliente : clientes) {
+        cliente.mostrarInformacion();
+    }
+}
+
+void Entrenador::cancelarSesion(string cliente, string dia, string horaInicio) {
+    for (Horario& horario : horarios) {
+        if (horario.getDia() == dia && horario.getHoraInicio() == horaInicio) {
+            horario.eliminarCliente(cliente);
+            return;
+        }
+    }
+    cout << "No se encontró el horario especificado para la cancelación." << endl;
+}

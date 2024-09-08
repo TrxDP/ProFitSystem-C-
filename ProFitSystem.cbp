@@ -42,6 +42,8 @@
 		<Unit filename="Cliente.h" />
 		<Unit filename="Entrenador.cpp" />
 		<Unit filename="Entrenador.h" />
+		<Unit filename="Horario.cpp" />
+		<Unit filename="Horario.h" />
 		<Unit filename="Membresia.cpp" />
 		<Unit filename="Membresia.h" />
 		<Unit filename="Pago.cpp" />

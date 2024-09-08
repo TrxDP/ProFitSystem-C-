@@ -48,3 +48,19 @@ void Cliente::reservarClase(string clase){
     cout << "Reservando la clase " << clase << " para " << nombre << endl;
     actividades.push_back(clase);  // Agregar la clase a la lista de actividades del cliente
 }
+
+void Cliente::reservarSesion(string dia, string horaInicio) {
+    sesionesReservadas.push_back(make_pair(dia, horaInicio));
+    cout << "Sesión reservada para el cliente " << nombre << " el " << dia << " a las " << horaInicio << "." << endl;
+}
+
+void Cliente::cancelarSesion(string dia, string horaInicio) {
+    for (auto it = sesionesReservadas.begin(); it != sesionesReservadas.end(); ++it) {
+        if (it->first == dia && it->second == horaInicio) {
+            sesionesReservadas.erase(it);
+            cout << "Sesión cancelada para el cliente " << nombre << " el " << dia << " a las " << horaInicio << "." << endl;
+            return;
+        }
+    }
+    cout << "No se encontró una sesión reservada en " << dia << " a las " << horaInicio << " para " << nombre << "." << endl;
+}
