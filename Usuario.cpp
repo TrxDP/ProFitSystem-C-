@@ -7,8 +7,10 @@ Usuario::Usuario(int _id, string _nombre,string _email, string _contrasena, stri
     email = _email;
     contrasena = _contrasena;
     tipoUsuario = _tipoUsuario;
+    activo = true;
 }
 
+/*
 Usuario::Usuario()
 {
     id = 0;
@@ -16,7 +18,9 @@ Usuario::Usuario()
     email = "-";
     contrasena = "-";
     tipoUsuario = "-";
+    activo = true;
 }
+*/
 
 Usuario::~Usuario()
 {
@@ -45,7 +49,9 @@ string Usuario::getTipoUsuario(){
     return tipoUsuario;
 }
 
-
+ bool Usuario::isActivo(){
+    return activo;
+ }
 
 
 // Inicializacion de los setters
@@ -68,6 +74,10 @@ void Usuario::setContrasena(string _contrasena){
 
 void Usuario::setTipoUsuario(string _tipoUsuario){
     tipoUsuario= _tipoUsuario;
+}
+
+void Usuario::setActivo(bool _activo){
+    activo=_activo;
 }
 
 void Usuario::setId(){

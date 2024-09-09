@@ -38,6 +38,8 @@
 		<Unit filename="Actividad.h" />
 		<Unit filename="Administrador.cpp" />
 		<Unit filename="Administrador.h" />
+		<Unit filename="Autenticacion.cpp" />
+		<Unit filename="Autenticacion.h" />
 		<Unit filename="Cliente.cpp" />
 		<Unit filename="Cliente.h" />
 		<Unit filename="Entrenador.cpp" />

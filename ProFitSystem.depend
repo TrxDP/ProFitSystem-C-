@@ -1,16 +1,21 @@
 # depslib dependency file v1.0
-1725580447 source:c:\users\trx\desktop\profitsystem\profitsystem\main.cpp
+1725856325 source:c:\users\trx\desktop\profitsystem\profitsystem\main.cpp
 	<iostream>
+	<vector>
+	"Usuario.h"
+	"Autenticacion.h"
+	"Administrador.h"
+	"Cliente.h"
+	"Entrenador.h"
+
+1725858323 source:c:\users\trx\desktop\profitsystem\profitsystem\usuario.cpp
 	"Usuario.h"
 
-1725771376 source:c:\users\trx\desktop\profitsystem\profitsystem\usuario.cpp
-	"Usuario.h"
-
-1725854392 c:\users\trx\desktop\profitsystem\profitsystem\usuario.h
+1725858388 c:\users\trx\desktop\profitsystem\profitsystem\usuario.h
 	<string>
 	<iostream>
 
-1725770600 source:c:\users\trx\desktop\profitsystem\profitsystem\cliente.cpp
+1725860499 source:c:\users\trx\desktop\profitsystem\profitsystem\cliente.cpp
 	"Cliente.h"
 	"Usuario.h"
 
@@ -18,10 +23,10 @@
 	<vector>
 	"Usuario.h"
 
-1725771564 source:c:\users\trx\desktop\profitsystem\profitsystem\entrenador.cpp
+1725860448 source:c:\users\trx\desktop\profitsystem\profitsystem\entrenador.cpp
 	"Entrenador.h"
 
-1725771182 c:\users\trx\desktop\profitsystem\profitsystem\entrenador.h
+1725855786 c:\users\trx\desktop\profitsystem\profitsystem\entrenador.h
 	<vector>
 	"Usuario.h"
 	"Horario.h"
@@ -62,10 +67,19 @@
 	<string>
 	<vector>
 
-1725749365 source:c:\users\trx\desktop\profitsystem\profitsystem\administrador.cpp
+1725860407 source:c:\users\trx\desktop\profitsystem\profitsystem\administrador.cpp
 	"Administrador.h"
+	"Usuario.h"
 
-1725665345 c:\users\trx\desktop\profitsystem\profitsystem\administrador.h
+1725858131 c:\users\trx\desktop\profitsystem\profitsystem\administrador.h
+	<vector>
+	"Usuario.h"
+
+1725855244 source:c:\users\trx\desktop\profitsystem\profitsystem\autenticacion.cpp
+	"Autenticacion.h"
+
+1725855237 c:\users\trx\desktop\profitsystem\profitsystem\autenticacion.h
+	<iostream>
 	<vector>
 	"Usuario.h"
 

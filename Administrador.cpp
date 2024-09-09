@@ -1,10 +1,10 @@
 #include "Administrador.h"
+#include"Usuario.h"
 
-Administrador::Administrador(int _id, string _nombre, string _email, string _contrasena)
+
+Administrador::Administrador(int _id, string _nombre, string _email, string _contrasena):Usuario(_id,_nombre,_email,_contrasena,"Administrador")
 {
     //ctor
-    Usuario(_id,_nombre,_email,_contrasena,"Administrador")
-;
 }
 
 Administrador::~Administrador()
