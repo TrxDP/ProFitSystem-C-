@@ -3,10 +3,10 @@
 	<iostream>
 	"Usuario.h"
 
-1725580842 source:c:\users\trx\desktop\profitsystem\profitsystem\usuario.cpp
+1725771376 source:c:\users\trx\desktop\profitsystem\profitsystem\usuario.cpp
 	"Usuario.h"
 
-1725599752 c:\users\trx\desktop\profitsystem\profitsystem\usuario.h
+1725854392 c:\users\trx\desktop\profitsystem\profitsystem\usuario.h
 	<string>
 	<iostream>
 
@@ -18,13 +18,14 @@
 	<vector>
 	"Usuario.h"
 
-1725665009 source:c:\users\trx\desktop\profitsystem\profitsystem\entrenador.cpp
+1725771564 source:c:\users\trx\desktop\profitsystem\profitsystem\entrenador.cpp
 	"Entrenador.h"
 
-1725743178 c:\users\trx\desktop\profitsystem\profitsystem\entrenador.h
+1725771182 c:\users\trx\desktop\profitsystem\profitsystem\entrenador.h
 	<vector>
-	<map>
 	"Usuario.h"
+	"Horario.h"
+	"Cliente.h"
 
 1725669194 source:c:\users\trx\desktop\profitsystem\profitsystem\actividad.cpp
 	"Actividad.h"

@@ -32,13 +32,6 @@ void Entrenador::setExperiencia(int _experiencia){
 }
 
 
-void Entrenador::consultarClientes(){
-    cout << "Clientes asignados al entrenador " << nombre << ": " << endl;
-    for(auto& cliente : clientes){
-        cout<<cliente<<endl;
-    }
-}
-
 
 void Entrenador::registrarProgresoCliente(string cliente, string progreso){
     cout << "Registrando progreso para " << cliente << ": " << progreso << endl;
@@ -51,14 +44,8 @@ void Entrenador::consultarActividades(){
     cout << "1. Pesas\n2. Cardio\n3. Yoga\n";  // Ejemplo de actividades
 }
 
-void Entrenador::visualizarHorarios(){
-    cout << "Horarios del entrenador " << nombre << ": " << endl;
-    for (const auto& horario : horarios) {
-        cout << horario << endl;
-    }
-}
 
-void Entrenador::agregarEspecializacion(string especializacion {
+void Entrenador::agregarEspecializacion(string especializacion) {
     especializaciones.push_back(especializacion);
     cout << "Especialización '" << especializacion << "' agregada al entrenador " << getNombre() << endl;
 }
@@ -112,14 +99,14 @@ void Entrenador::agregarCliente(Cliente cliente) {
 
 void Entrenador::mostrarHorarios(){
     cout << "Horarios del entrenador " << getNombre() << ":" << endl;
-    for (const Horario& horario : horarios) {
+    for (Horario& horario : horarios) {
         horario.mostrarHorario();
     }
 }
 
 void Entrenador::mostrarClientes(){
     cout << "Clientes del entrenador " << getNombre() << ":" << endl;
-    for (const Cliente& cliente : clientes) {
+    for (Cliente& cliente : clientes) {
         cliente.mostrarInformacion();
     }
 }

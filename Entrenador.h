@@ -2,10 +2,10 @@
 #define ENTRENADOR_H
 
 #include<vector>
-#include<map>
 #include"Usuario.h"
 #include"Horario.h"
 #include"Cliente.h"
+
 
 class Entrenador : public Usuario
 {
@@ -33,11 +33,8 @@ class Entrenador : public Usuario
         void setEspecializaciones(vector<string>& _especializaciones);
         void setExperiencia(int _experiencia);
 
-
-        void consultarClientes();
         void registrarProgresoCliente(string cliente, string progreso);
         void consultarActividades();
-        void visualizarHorarios();
         void agregarHorario(Horario horario);
 
         // Método para agregar una especialización al entrenador

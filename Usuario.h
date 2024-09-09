@@ -14,6 +14,7 @@ class Usuario
         string email;
         string contrasena;
         string tipoUsuario;
+        bool activo; // Atributo para saber si el usuario está activo o no
 
     public:
 
@@ -46,7 +47,13 @@ class Usuario
         void setContrasena();
         void setTipoUsuario();
 
+
+        void mostrarInformacion();
         void modificarPerfil();
+        // Método para desactivar al usuario (no lo elimina físicamente)
+        void desactivar();
+        // Métodos adicionales para la autenticación
+        bool login(string _email, string _contrasena);
 
     private:
 };

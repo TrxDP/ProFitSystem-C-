@@ -102,3 +102,19 @@ void Usuario::modificarPerfil(){
     cout << "Nuevo email: ";
     cin >> email;
 }
+
+void Usuario::mostrarInformacion(){
+    cout<<"Nombre: "<<nombre<<endl;
+    cout<<"Email: "<<email<<endl;
+    cout<<"Rango: "<<tipoUsuario<<endl;
+}
+
+
+void Usuario::desactivar() {
+    activo = false;
+    cout << "Usuario " << nombre << " desactivado." << endl;
+}
+
+bool Usuario::login(string _email, string _contrasena) {
+    return (email == _email && contrasena == _contrasena && activo);
+}
