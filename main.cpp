@@ -8,13 +8,16 @@
 #include "Administrador.h"
 #include "Cliente.h"
 #include "Entrenador.h"
+#include "Menus.h"
 
 using namespace std;
 
-vector<string> especializaciones = {"Yoga","Pesas","Piscina"};
+//Inicializando clases
 
-int main()
-{
+Menus objMenu;
+
+vector<string> especializaciones = {"Yoga","Pesas","Piscina"};
+Usuario* login(){
     // Crear usuarios de ejemplo
     Administrador admin(1, "Admin", "admin@gym.com", "1234");
     Cliente cliente(2, "Juan", "juan@gym.com", "abcd");
@@ -33,6 +36,24 @@ int main()
         // Mostrar menú basado en el tipo de usuario
         // Aquí podríamos implementar un menú dinámico
         cout << "Hello world!" << endl;
+        return usuarioLogueado;
     }
+}
+
+void mostrarMenuPorUsuario(Usuario* usuario) {
+
+    if (usuario->getTipoUsuario() == "Administrador") {
+        objMenu.mostrarMenuAdministrador();
+    } else if (usuario->getTipoUsuario() == "Cliente") {
+        objMenu.mostrarMenuCliente();
+    } else if (usuario->getTipoUsuario() == "Entrenador") {
+        objMenu.mostrarMenuEntrenador();
+    } else {
+        cout << "Tipo de usuario no reconocido.\n";
+    }
+}
+int main()
+{
+    mostrarMenuPorUsuario(login());
     return 0;
 }
