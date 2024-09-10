@@ -15,6 +15,8 @@ class Cliente: public Usuario
         vector<string> progreso;
         // Lista de sesiones reservadas <día, hora>
         vector<pair<string, string>> sesionesReservadas;
+        // Atributo para representar si el cliente está activo o no
+        bool activo;
 
     public:
         Cliente(int _id, string _nombre, string _email, string _contrasena);

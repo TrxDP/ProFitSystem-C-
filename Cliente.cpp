@@ -7,6 +7,7 @@
 Cliente::Cliente(int _id, string _nombre, string _email, string _contrasena):Usuario(_id,_nombre,_email,_contrasena,"Cliente")
 {
     //ctor
+    activo = true;
 }
 
 Cliente::~Cliente()
@@ -14,7 +15,13 @@ Cliente::~Cliente()
     //dtor
 }
 
+bool Cliente::getActivo() {
+        return activo;
+}
 
+void Cliente::setActivo(bool _activo) {
+    activo = _activo;
+}
 void Cliente::verPerfil(){
     cout << "Perfil del cliente: " << endl;
     cout << "ID: " << id << endl;
