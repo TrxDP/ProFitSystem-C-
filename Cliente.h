@@ -22,6 +22,10 @@ class Cliente: public Usuario
         Cliente(int _id, string _nombre, string _email, string _contrasena);
         virtual ~Cliente();
 
+        bool getActivo();
+
+        void setActivo(bool _activo);
+
         void verPerfil();
         void consultarActividades();
         void registrarAsistencia();

@@ -14,6 +14,13 @@ Administrador::~Administrador()
         delete usuario;
     }
 }
+bool Administrador::getActivo() {
+    return activo;
+}
+
+void Administrador::setActivo(bool _activo) {
+        activo = _activo;
+}
 
 
 void Administrador::crearUsuario(Usuario* nuevoUsuario){
