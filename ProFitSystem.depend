@@ -15,7 +15,7 @@
 	<string>
 	<iostream>
 
-1725860499 source:c:\users\trx\desktop\profitsystem\profitsystem\cliente.cpp
+1725934498 source:c:\users\trx\desktop\profitsystem\profitsystem\cliente.cpp
 	"Cliente.h"
 	"Usuario.h"
 
@@ -67,7 +67,7 @@
 	<string>
 	<vector>
 
-1725860407 source:c:\users\trx\desktop\profitsystem\profitsystem\administrador.cpp
+1725935026 source:c:\users\trx\desktop\profitsystem\profitsystem\administrador.cpp
 	"Administrador.h"
 	"Usuario.h"
 
