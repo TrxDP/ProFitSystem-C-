@@ -10,7 +10,7 @@ class Menus
         Menus();
         virtual ~Menus();
 
-        void mostrarMenuAdministrador();
+        void mostrarMenuAdministrador(void _crearUsuario(),void _modificarUsuario(),void _eliminarUsuario(),void _gestionarActividades());
         void mostrarMenuCliente();
         void mostrarMenuEntrenador();
 

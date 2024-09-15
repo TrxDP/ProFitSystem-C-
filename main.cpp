@@ -35,7 +35,6 @@ Usuario* login(){
     if (usuarioLogueado != nullptr) {
         // Mostrar menú basado en el tipo de usuario
         // Aquí podríamos implementar un menú dinámico
-        cout << "Hello world!" << endl;
         return usuarioLogueado;
     }
 }

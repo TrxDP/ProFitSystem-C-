@@ -21,3 +21,16 @@ Usuario* Autenticacion::iniciarSesion(string email, string contrasena) {
     cout << "Credenciales incorrectas." << endl;
     return nullptr;
 }
+
+Usuario* Autenticacion::getUsuarioActual() {
+        return usuarioActual;
+}
+
+void Autenticacion::cerrarSesion(){
+    if (usuarioActual) {
+        cout << "Cerrando sesión del usuario: " << usuarioActual->getEmail() << endl;
+        usuarioActual = nullptr;
+    } else {
+        cout << "No hay un usuario actualmente autenticado." << endl;
+    }
+}

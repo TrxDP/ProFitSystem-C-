@@ -13,7 +13,7 @@ Menus::~Menus()
 
 //El Administrador tiene acceso a todas las funcionalidades de la aplicación, como crear, modificar o eliminar usuarios y actividades, gestionar pagos, ver estadísticas, etc.
 
-void Menus::mostrarMenuAdministrador() {
+void Menus::mostrarMenuAdministrador(void _crearUsuario(),void _modificarUsuario(),void _eliminarUsuario(),void _gestionarActividades()) {
     int opcion;
     do {
         cout << "\n--- Menu Administrador ---\n";
@@ -29,15 +29,19 @@ void Menus::mostrarMenuAdministrador() {
         switch (opcion) {
             case 1:
                 // Llamar función para crear usuario
+                _crearUsuario();
                 break;
             case 2:
                 // Llamar función para modificar usuario
+                _modificarUsuario();
                 break;
             case 3:
                 // Llamar función para eliminar usuario
+                _eliminarUsuario();
                 break;
             case 4:
                 // Llamar función para gestionar actividades
+                _gestionarActividades();
                 break;
             case 5:
                 // Llamar función para consultar estadísticas

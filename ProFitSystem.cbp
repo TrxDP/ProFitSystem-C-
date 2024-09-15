@@ -48,6 +48,8 @@
 		<Unit filename="Horario.h" />
 		<Unit filename="Membresia.cpp" />
 		<Unit filename="Membresia.h" />
+		<Unit filename="Menus.cpp" />
+		<Unit filename="Menus.h" />
 		<Unit filename="Pago.cpp" />
 		<Unit filename="Pago.h" />
 		<Unit filename="Reserva.cpp" />
