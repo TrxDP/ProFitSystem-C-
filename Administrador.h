@@ -10,11 +10,12 @@ class Administrador: public Usuario
 {
     public:
         Administrador(int _id, string _nombre, string _email, string _contrasena);
+        Administrador();
         virtual ~Administrador();
         bool getActivo();
         void setActivo(bool _activo);
 
-        void crearUsuario(Usuario* nuevoUsuario);
+        Usuario crearUsuario(int _id);
         void modificarUsuario(int usuarioId, string nuevoNombre, string nuevoEmail);
         void eliminarUsuario(int usuarioId);
         void gestionarActividades();
@@ -25,7 +26,7 @@ class Administrador: public Usuario
     protected:
 
     private:
-        vector<Usuario*> usuarios;     // Lista de usuarios registrados en el sistema
+        vector<Usuario> usuarios;     // Lista de usuarios registrados en el sistema
         vector<string> actividades;    // Lista de actividades disponibles en el gimnasio
         bool activo;
 };

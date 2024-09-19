@@ -7,12 +7,17 @@ Administrador::Administrador(int _id, string _nombre, string _email, string _con
     //ctor
 }
 
+Administrador::Administrador(){
+    id = 0;
+    nombre = "-";
+    email = "-";
+    contrasena = "-";
+    tipoUsuario = "-";
+}
+
 Administrador::~Administrador()
 {
     //dtor
-    for (auto& usuario : usuarios) {
-        delete usuario;
-    }
 }
 bool Administrador::getActivo() {
     return activo;
@@ -23,16 +28,19 @@ void Administrador::setActivo(bool _activo) {
 }
 
 
-void Administrador::crearUsuario(Usuario* nuevoUsuario){
-    usuarios.push_back(nuevoUsuario);
-    cout << "Usuario creado: " << nuevoUsuario->getNombre() << endl;
+Usuario Administrador::crearUsuario(int _id){
+    string nombre,email,contrasena,tipoUsuario;
+    cout << "Usuario creado: " << nombre << endl;
+    return Usuario(_id,nombre,email,contrasena,tipoUsuario);
 }
+
+
 
 void Administrador::modificarUsuario(int usuarioId, string nuevoNombre, string nuevoEmail){
     for (auto& usuario : usuarios) {
-        if (usuario->getId() == usuarioId) {
-            usuario->setNombre(nuevoNombre);
-            usuario->setEmail(nuevoEmail);
+        if (usuario.getId() == usuarioId) {
+            usuario.setNombre(nuevoNombre);
+            usuario.setEmail(nuevoEmail);
             cout << "Usuario modificado: " << nuevoNombre << endl;
             return;
         }
@@ -42,9 +50,8 @@ void Administrador::modificarUsuario(int usuarioId, string nuevoNombre, string n
 
 void Administrador::eliminarUsuario(int usuarioId){
     for (auto it = usuarios.begin(); it != usuarios.end(); ++it) {
-        if ((*it)->getId() == usuarioId) {
-            cout << "Usuario eliminado: " << (*it)->getNombre() << endl;
-            delete *it;
+        if ((*it).getId() == usuarioId) {
+            cout << "Usuario eliminado: " << (*it).getNombre() << endl;
             usuarios.erase(it);
             return;
         }

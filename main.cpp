@@ -32,6 +32,7 @@ void mostrarMenuAdministrador();
 //Inicializando clases
 BaseDatos objBd;
 Sistema objSys;
+Administrador objAdmin;
 
 vector<string> especializaciones = {"Yoga","Pesas","Piscina"};
 
@@ -114,6 +115,7 @@ void mostrarMenuEntrenador() {
 //El Administrador tiene acceso a todas las funcionalidades de la aplicación, como crear, modificar o eliminar usuarios y actividades, gestionar pagos, ver estadísticas, etc.
 void mostrarMenuAdministrador() {
     int opcion;
+    Usuario _nuevoUsuario;
     do {
         cout << "\n--- Menu Administrador ---\n";
         cout << "1. Crear Usuario\n";
@@ -128,6 +130,7 @@ void mostrarMenuAdministrador() {
         switch (opcion) {
             case 1:
                 // Llamar función para crear usuario
+                _nuevoUsuario = objAdmin.crearUsuario(objSys.getId());
 
                 break;
             case 2:

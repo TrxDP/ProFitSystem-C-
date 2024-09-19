@@ -19,7 +19,7 @@ Usuario Autenticacion::iniciarSesion(string email, string contrasena) {
         }
     }
     cout << "Credenciales incorrectas." << endl;
-    return Usuario();
+    return Usuario(); //Si el inicio de sesion fue malo me retorna un usuario por defecto
 }
 
 Usuario* Autenticacion::getUsuarioActual() {

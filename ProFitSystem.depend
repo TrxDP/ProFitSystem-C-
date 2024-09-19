@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1726586177 source:c:\users\trx\desktop\profitsystem\profitsystem\main.cpp
+1726751114 source:c:\users\trx\desktop\profitsystem\profitsystem\main.cpp
 	<iostream>
 	<vector>
 	<string.h>
@@ -9,7 +9,6 @@
 	"BaseDatos.h"
 	"Cliente.h"
 	"Entrenador.h"
-	"Menus.h"
 	"Sistema.h"
 	"Usuario.h"
 
@@ -72,15 +71,15 @@
 	<string>
 	<vector>
 
-1725935026 source:c:\users\trx\desktop\profitsystem\profitsystem\administrador.cpp
+1726752660 source:c:\users\trx\desktop\profitsystem\profitsystem\administrador.cpp
 	"Administrador.h"
 	"Usuario.h"
 
-1725935029 c:\users\trx\desktop\profitsystem\profitsystem\administrador.h
+1726752619 c:\users\trx\desktop\profitsystem\profitsystem\administrador.h
 	<vector>
 	"Usuario.h"
 
-1726585893 source:c:\users\trx\desktop\profitsystem\profitsystem\autenticacion.cpp
+1726751403 source:c:\users\trx\desktop\profitsystem\profitsystem\autenticacion.cpp
 	"Autenticacion.h"
 
 1726585786 c:\users\trx\desktop\profitsystem\profitsystem\autenticacion.h
