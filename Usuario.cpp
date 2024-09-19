@@ -10,7 +10,7 @@ Usuario::Usuario(int _id, string _nombre,string _email, string _contrasena, stri
     activo = true;
 }
 
-/*
+
 Usuario::Usuario()
 {
     id = 0;
@@ -18,9 +18,9 @@ Usuario::Usuario()
     email = "-";
     contrasena = "-";
     tipoUsuario = "-";
-    activo = true;
+    activo = false;
 }
-*/
+
 
 Usuario::~Usuario()
 {

@@ -1,17 +1,22 @@
 # depslib dependency file v1.0
-1725860551 source:c:\users\trx\desktop\profitsystem\profitsystem\main.cpp
+1726586177 source:c:\users\trx\desktop\profitsystem\profitsystem\main.cpp
 	<iostream>
 	<vector>
-	"Usuario.h"
+	<string.h>
+	<string>
 	"Autenticacion.h"
 	"Administrador.h"
+	"BaseDatos.h"
 	"Cliente.h"
 	"Entrenador.h"
-
-1725860519 source:c:\users\trx\desktop\profitsystem\profitsystem\usuario.cpp
+	"Menus.h"
+	"Sistema.h"
 	"Usuario.h"
 
-1725858388 c:\users\trx\desktop\profitsystem\profitsystem\usuario.h
+1726585945 source:c:\users\trx\desktop\profitsystem\profitsystem\usuario.cpp
+	"Usuario.h"
+
+1726585945 c:\users\trx\desktop\profitsystem\profitsystem\usuario.h
 	<string>
 	<iostream>
 
@@ -75,17 +80,35 @@
 	<vector>
 	"Usuario.h"
 
-1726363977 source:c:\users\trx\desktop\profitsystem\profitsystem\autenticacion.cpp
+1726585893 source:c:\users\trx\desktop\profitsystem\profitsystem\autenticacion.cpp
 	"Autenticacion.h"
 
-1726363935 c:\users\trx\desktop\profitsystem\profitsystem\autenticacion.h
+1726585786 c:\users\trx\desktop\profitsystem\profitsystem\autenticacion.h
 	<iostream>
 	<vector>
 	"Usuario.h"
 
-1725939298 source:c:\users\trx\desktop\profitsystem\profitsystem\menus.cpp
+1726751032 source:c:\users\trx\desktop\profitsystem\profitsystem\menus.cpp
 	"Menus.h"
 
-1725939415 c:\users\trx\desktop\profitsystem\profitsystem\menus.h
+1726751032 c:\users\trx\desktop\profitsystem\profitsystem\menus.h
 	<iostream>
+
+1726585612 source:c:\users\trx\desktop\profitsystem\profitsystem\sistema.cpp
+	"Sistema.h"
+
+1726585602 c:\users\trx\desktop\profitsystem\profitsystem\sistema.h
+	<vector>
+	<iostream>
+	"Usuario.h"
+
+1726585568 source:c:\users\trx\desktop\profitsystem\profitsystem\basedatos.cpp
+	"BaseDatos.h"
+
+1726585537 c:\users\trx\desktop\profitsystem\profitsystem\basedatos.h
+	<iostream>
+	<vector>
+	<fstream>
+	<sstream>
+	"Usuario.h"
 

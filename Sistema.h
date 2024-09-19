@@ -1,7 +1,13 @@
+
+
+
+
 #ifndef SISTEMA_H
 #define SISTEMA_H
 #include <vector>
 #include<iostream>
+
+
 #include "Usuario.h"
 
 using namespace std;
@@ -14,19 +20,26 @@ class Sistema
         virtual ~Sistema();
 
         // getters
+        vector<Usuario> getUsuarios();
+        vector<Usuario*> getCopiaUsuarios();
+        int getId();
+        int getIdFacturas();
 
+        // setters
 
+        void setUsuarios(vector<Usuario> _Usuarios);
+        void setUsuariosCopia(vector<Usuario> _usuarios);
 
-        //base de datos
-        void leerBlockNotas();
-        void escribiBlockNotas();
-        void actualizarBlockNotas();
-        void eliminarUserBlockNotas();
+        void verUsuarios(vector<Usuario> usuarios);
+
+        void idAumento();
+        void idFactuasAumento();
 
     protected:
 
     private:
         vector<Usuario> usuarios;
+        vector<Usuario*> usuarioscopia;
         int id;
         int idFacturas;
 

@@ -21,7 +21,7 @@ class Usuario
 
         //construtores
         Usuario(int _id, string _nombre,string _email, string _contrasena, string _tipoUsuario);
-        //Usuario();
+        Usuario();
         // Destructor
         virtual ~Usuario();
 
