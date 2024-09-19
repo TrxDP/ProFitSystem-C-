@@ -29,8 +29,25 @@ void Administrador::setActivo(bool _activo) {
 
 
 Usuario Administrador::crearUsuario(int _id){
+    string roles[3]={"Cliente", "Entrenador","Administrador"};
+    int opc;
     string nombre,email,contrasena,tipoUsuario;
-    cout << "Usuario creado: " << nombre << endl;
+    cout<<"\n\t\t\tIngrese el nombre: ";
+    cin>>nombre;
+    cout<<"\n\t\t\tIngrese el email: ";
+    cin>>email;
+    cout<<"\n\t\t\tIngrese el contrasena: ";
+    cin>>contrasena;
+    cout<<"\n\t\t\tRoles";
+    for(int i = 0;i<3;i++){
+        cout<<"\n\t\t\t"<<(i+1)<<") "<<roles[i];
+    }
+    cout<<"\n\t\t\tSeleccione el rol:";
+    cin>>opc;
+    if(opc==1){tipoUsuario=roles[0];}
+    if(opc==2){tipoUsuario=roles[1];}
+    if(opc==3){tipoUsuario=roles[2];}
+    cout << "\n\t\t\tUsuario creado: " << nombre << endl;
     return Usuario(_id,nombre,email,contrasena,tipoUsuario);
 }
 
