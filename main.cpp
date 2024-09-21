@@ -120,11 +120,12 @@ void mostrarMenuAdministrador() {
     do {
         cout << "\n\t\t\t--- Menu Administrador ---\n";
         cout << "\t\t\t1. Crear Usuario\n";
-        cout << "\t\t\t2. Modificar Usuario\n";
-        cout << "\t\t\t3. Eliminar Usuario\n";
-        cout << "\t\t\t4. Gestionar Actividades\n";
-        cout << "\t\t\t5. Consultar Estadísticas\n";
-        cout << "\t\t\t6. Salir\n";
+        cout << "\t\t\t2. Mostrar Usuarios\n";
+        cout << "\t\t\t3. Modificar Usuario\n";
+        cout << "\t\t\t4. Eliminar Usuario\n";
+        cout << "\t\t\t5. Gestionar Actividades\n";
+        cout << "\t\t\t6. Consultar Estadísticas\n";
+        cout << "\t\t\t7. Salir\n";
         cout << "\t\t\tElija una opción: ";
         cin >> opcion;
 
@@ -136,7 +137,7 @@ void mostrarMenuAdministrador() {
                 break;
             case 2:
                 // Llamar función para modificar usuario
-
+                    objSys.verUsuarios(objSys.getUsuarios());
                 break;
             case 3:
                 // Llamar función para eliminar usuario
@@ -150,13 +151,15 @@ void mostrarMenuAdministrador() {
                 // Llamar función para consultar estadísticas
                 break;
             case 6:
+                break;
+            case 7:
                 cout << "Saliendo...\n";
                 break;
             default:
                 cout << "Opción no válida, intente de nuevo.\n";
                 break;
         }
-    } while (opcion != 6);
+    } while (opcion != 7);
 }
 
 
