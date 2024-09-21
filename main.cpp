@@ -238,11 +238,14 @@ void inicio(){
 }
 void cargarBaseDatos(){
     objSys.setUsuarios(objBd.leerUsuariosBlockNotas());
+    objSys.setId(objBd.leerIdBlockNotas());
 }
 
 void updateUsuarios(Usuario _usuario){
     objSys.pushUsuarios(_usuario);
     objBd.actualizarUsuariosBlockNotas(objSys.getUsuarios());
+    objSys.idAumento();
+    objBd.actualizarIdBlockNotas(objSys.getId());
 }
 
 int main()

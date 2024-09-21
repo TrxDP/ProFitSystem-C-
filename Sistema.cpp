@@ -29,8 +29,13 @@ int Sistema::getIdFacturas(){
     return idFacturas;
 }
 
+void Sistema::setId(int _id){
+    id=_id;
+}
 
-
+void Sistema::setIdFacturas(int _idFacturas){
+    idFacturas=_idFacturas;
+}
 void Sistema::verUsuarios(vector<Usuario> usuarios){
     int cantidad = 1;
     for(auto& usuario : usuarios){

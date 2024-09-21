@@ -29,6 +29,8 @@ class Sistema
 
         void setUsuarios(vector<Usuario> _Usuarios);
         void setUsuariosCopia(vector<Usuario> _usuarios);
+        void setId(int _id);
+        void setIdFacturas(int _idFacturas);
 
         void verUsuarios(vector<Usuario> usuarios);
 

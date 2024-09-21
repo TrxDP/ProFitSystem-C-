@@ -71,4 +71,38 @@ void BaseDatos::eliminarUsuarioUserBlockNotas(int idUsuario, vector<Usuario>& _u
     cout << "Usuario no encontrado." << endl;
 }
 
+int BaseDatos::leerIdBlockNotas(){
+    int id;
+    ifstream archivo(archivoId);
+    // Verifica si el archivo se abrió correctamente
+    if(archivo.is_open()){
+        string linea;
+        //Lee la linea del archivo
+        getline(archivo,linea);
+        id=stoi(linea);
+        // Cierra el archivo
+        archivo.close();
+        return id;
+    }else{
+        cout << "No se pudo abrir el archivo para escribir los usuarios." << endl;
+        //return -1;
+    }
+}
 
+void BaseDatos::escribirIdBlockNotas(int _id){
+    ofstream archivo(archivoId);
+    // Verifica si el archivo se abrió correctamente
+    if (archivo.is_open()) {
+        // Escribe en el archivo
+        archivo << _id;
+
+        // Cierra el archivo
+        archivo.close();
+    } else {
+        cerr << "No se pudo abrir el archivo." <<endl;
+    }
+}
+
+void BaseDatos::actualizarIdBlockNotas(int _id){
+    escribirIdBlockNotas(_id);
+}

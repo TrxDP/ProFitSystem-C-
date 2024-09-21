@@ -24,9 +24,9 @@ class BaseDatos
         void actualizarUsuariosBlockNotas(vector<Usuario> _usuarios);
         void eliminarUsuarioUserBlockNotas(int idUsuario, vector<Usuario>& _usuarios);
         //id
-        void leerIdBlockNotas();
-        void escribirIdBlockNotas();
-        void actualizarIdBlockNotas();
+        int leerIdBlockNotas();
+        void escribirIdBlockNotas(int _id);
+        void actualizarIdBlockNotas(int _id);
 
 
     protected:

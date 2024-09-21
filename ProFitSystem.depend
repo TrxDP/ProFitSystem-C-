@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1726754197 source:c:\users\trx\desktop\profitsystem\profitsystem\main.cpp
+1726932430 source:c:\users\trx\desktop\profitsystem\profitsystem\main.cpp
 	<iostream>
 	<vector>
 	<string.h>
@@ -79,7 +79,7 @@
 	<vector>
 	"Usuario.h"
 
-1726751403 source:c:\users\trx\desktop\profitsystem\profitsystem\autenticacion.cpp
+1726754918 source:c:\users\trx\desktop\profitsystem\profitsystem\autenticacion.cpp
 	"Autenticacion.h"
 
 1726585786 c:\users\trx\desktop\profitsystem\profitsystem\autenticacion.h
@@ -93,18 +93,18 @@
 1726751032 c:\users\trx\desktop\profitsystem\profitsystem\menus.h
 	<iostream>
 
-1726753964 source:c:\users\trx\desktop\profitsystem\profitsystem\sistema.cpp
+1726931847 source:c:\users\trx\desktop\profitsystem\profitsystem\sistema.cpp
 	"Sistema.h"
 
-1726753947 c:\users\trx\desktop\profitsystem\profitsystem\sistema.h
+1726931774 c:\users\trx\desktop\profitsystem\profitsystem\sistema.h
 	<vector>
 	<iostream>
 	"Usuario.h"
 
-1726754235 source:c:\users\trx\desktop\profitsystem\profitsystem\basedatos.cpp
+1726933398 source:c:\users\trx\desktop\profitsystem\profitsystem\basedatos.cpp
 	"BaseDatos.h"
 
-1726754231 c:\users\trx\desktop\profitsystem\profitsystem\basedatos.h
+1726933262 c:\users\trx\desktop\profitsystem\profitsystem\basedatos.h
 	<iostream>
 	<vector>
 	<fstream>
