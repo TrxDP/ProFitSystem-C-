@@ -20,8 +20,8 @@ class BaseDatos
 
         // usuarios
         vector<Usuario> leerUsuariosBlockNotas();
-        void escribirUsuariosBlockNotas(vector<Usuario>& _usuarios);
-        void actualizarUsuariosBlockNotas(vector<Usuario>& _usuarios);
+        void escribirUsuariosBlockNotas(vector<Usuario> _usuarios);
+        void actualizarUsuariosBlockNotas(vector<Usuario> _usuarios);
         void eliminarUsuarioUserBlockNotas(int idUsuario, vector<Usuario>& _usuarios);
         //id
         void leerIdBlockNotas();

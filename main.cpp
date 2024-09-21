@@ -27,6 +27,7 @@ Usuario usuarioLogueado;
 void mostrarMenuCliente();
 void mostrarMenuEntrenador();
 void mostrarMenuAdministrador();
+void updateUsuarios(Usuario _usuario);
 
 
 //Inicializando clases
@@ -117,21 +118,21 @@ void mostrarMenuAdministrador() {
     int opcion;
     Usuario _nuevoUsuario;
     do {
-        cout << "\n--- Menu Administrador ---\n";
-        cout << "1. Crear Usuario\n";
-        cout << "2. Modificar Usuario\n";
-        cout << "3. Eliminar Usuario\n";
-        cout << "4. Gestionar Actividades\n";
-        cout << "5. Consultar Estadísticas\n";
-        cout << "6. Salir\n";
-        cout << "Elija una opción: ";
+        cout << "\n\t\t\t--- Menu Administrador ---\n";
+        cout << "\t\t\t1. Crear Usuario\n";
+        cout << "\t\t\t2. Modificar Usuario\n";
+        cout << "\t\t\t3. Eliminar Usuario\n";
+        cout << "\t\t\t4. Gestionar Actividades\n";
+        cout << "\t\t\t5. Consultar Estadísticas\n";
+        cout << "\t\t\t6. Salir\n";
+        cout << "\t\t\tElija una opción: ";
         cin >> opcion;
 
         switch (opcion) {
             case 1:
                 // Llamar función para crear usuario
                 _nuevoUsuario = objAdmin.crearUsuario(objSys.getId());
-
+                updateUsuarios(_nuevoUsuario);
                 break;
             case 2:
                 // Llamar función para modificar usuario
@@ -179,11 +180,7 @@ Usuario login(){
 
     // Prueba de inicio de sesión
     Usuario _usuarioLogueado = sistemaAuth.iniciarSesion(email, contrasena);
-
-    if (usuarioLogueado.getId() != 0) {
-        // Mostrar menú basado en el tipo de usuario
-        return _usuarioLogueado;
-    }
+    return _usuarioLogueado;
 }
 
 
@@ -217,7 +214,11 @@ void inicio(){
         switch(opc){
             case 1:
                 usuarioLogueado=login();
-                mostrarMenuPorUsuario(usuarioLogueado);
+                if (usuarioLogueado.getId() != 0) {
+                    mostrarMenuPorUsuario(usuarioLogueado);
+                }else{
+                    system("pause");
+                }
                 break;
             case 2:
                 objSys.verUsuarios(objSys.getUsuarios());
@@ -237,6 +238,11 @@ void inicio(){
 }
 void cargarBaseDatos(){
     objSys.setUsuarios(objBd.leerUsuariosBlockNotas());
+}
+
+void updateUsuarios(Usuario _usuario){
+    objSys.pushUsuarios(_usuario);
+    objBd.actualizarUsuariosBlockNotas(objSys.getUsuarios());
 }
 
 int main()

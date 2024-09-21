@@ -4,7 +4,6 @@ Sistema::Sistema()
 {
     //ctor
     usuarios;
-    usuarioscopia;
     id = 0;
     idFacturas= 0;
 }
@@ -18,16 +17,19 @@ vector<Usuario> Sistema::getUsuarios(){
     return usuarios;
 }
 
+/*
 vector<Usuario*> Sistema::getCopiaUsuarios(){
     return usuarioscopia;
 }
-
+*/
 int Sistema::getId(){
     return id;
 }
 int Sistema::getIdFacturas(){
     return idFacturas;
 }
+
+
 
 void Sistema::verUsuarios(vector<Usuario> usuarios){
     int cantidad = 1;
@@ -55,3 +57,8 @@ void Sistema::idAumento(){
 void Sistema::idFactuasAumento(){
     idFacturas++;
 }
+
+void Sistema::pushUsuarios(Usuario _nuevoUsuario){
+    usuarios.push_back(_nuevoUsuario);
+}
+

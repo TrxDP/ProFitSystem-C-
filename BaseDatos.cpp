@@ -36,7 +36,7 @@ vector<Usuario> BaseDatos::leerUsuariosBlockNotas() {
 }
 
 // Método para escribir usuarios en un archivo de texto
-void BaseDatos::escribirUsuariosBlockNotas(vector<Usuario>& _usuarios) {
+void BaseDatos::escribirUsuariosBlockNotas(vector<Usuario> _usuarios) {
     ofstream archivo(archivoUsuarios);
     if (archivo.is_open()) {
         for (auto& usuario : _usuarios) {
@@ -53,7 +53,7 @@ void BaseDatos::escribirUsuariosBlockNotas(vector<Usuario>& _usuarios) {
 }
 
 // Método para actualizar el archivo de usuarios (sobreescribe el archivo)
-void BaseDatos::actualizarUsuariosBlockNotas(vector<Usuario>& _usuarios) {
+void BaseDatos::actualizarUsuariosBlockNotas(vector<Usuario> _usuarios) {
     escribirUsuariosBlockNotas(_usuarios);
 }
 

@@ -21,7 +21,7 @@ class Sistema
 
         // getters
         vector<Usuario> getUsuarios();
-        vector<Usuario*> getCopiaUsuarios();
+        //vector<Usuario*> getCopiaUsuarios();
         int getId();
         int getIdFacturas();
 
@@ -35,11 +35,14 @@ class Sistema
         void idAumento();
         void idFactuasAumento();
 
+        //Update
+        void pushUsuarios(Usuario _nuevoUsuario);
+
     protected:
 
     private:
         vector<Usuario> usuarios;
-        vector<Usuario*> usuarioscopia;
+        //vector<Usuario*> usuarioscopia;
         int id;
         int idFacturas;
 

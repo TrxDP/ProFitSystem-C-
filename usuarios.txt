@@ -1,2 +1,3 @@
 20001,admin,admin@gmail.com,1234,Administrador
 20002,kratos,kratos@gmail.com,5678,Cliente
+0,thor,thor@gmail.com,123456,Cliente
