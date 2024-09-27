@@ -16,8 +16,8 @@ class Administrador: public Usuario
         void setActivo(bool _activo);
 
         Usuario crearUsuario(int _id);
-        void modificarUsuario(int usuarioId, string nuevoNombre, string nuevoEmail);
-        void eliminarUsuario(int usuarioId);
+        void modificarUsuario(int usuarioId, string nuevoNombre, string nuevoEmail,vector<Usuario>& _usuarios);
+        vector<Usuario> eliminarUsuario(int usuarioId,vector<Usuario> _usuarios);
         void gestionarActividades();
         void agregarActividad(string nuevaActividad);
         void consultarEstadisticas();

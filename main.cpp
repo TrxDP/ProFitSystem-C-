@@ -28,6 +28,7 @@ void mostrarMenuCliente();
 void mostrarMenuEntrenador();
 void mostrarMenuAdministrador();
 void updateUsuarios(Usuario _usuario);
+void updateVectorUsuarios();
 
 
 //Inicializando clases
@@ -116,6 +117,8 @@ void mostrarMenuEntrenador() {
 //El Administrador tiene acceso a todas las funcionalidades de la aplicación, como crear, modificar o eliminar usuarios y actividades, gestionar pagos, ver estadísticas, etc.
 void mostrarMenuAdministrador() {
     int opcion;
+    int _id;
+    string _nombre,email,contrasena;
     Usuario _nuevoUsuario;
     do {
         cout << "\n\t\t\t--- Menu Administrador ---\n";
@@ -136,21 +139,25 @@ void mostrarMenuAdministrador() {
                 updateUsuarios(_nuevoUsuario);
                 break;
             case 2:
-                // Llamar función para modificar usuario
+
                     objSys.verUsuarios(objSys.getUsuarios());
                 break;
             case 3:
-                // Llamar función para eliminar usuario
+                // Llamar función para modificar usuario
 
                 break;
             case 4:
-                // Llamar función para gestionar actividades
-
+                // Llamar función para eliminar usuario
+                cout<<"\n\t\t\tIngrese el id: ";
+                cin>>_id;
+                objSys.setUsuarios(objAdmin.eliminarUsuario(_id,objSys.getUsuarios()));
+                updateVectorUsuarios();
                 break;
             case 5:
-                // Llamar función para consultar estadísticas
+                // Llamar función para gestionar actividades
                 break;
             case 6:
+                // Llamar función para consultar estadísticas
                 break;
             case 7:
                 cout << "Saliendo...\n";
@@ -246,9 +253,13 @@ void cargarBaseDatos(){
 
 void updateUsuarios(Usuario _usuario){
     objSys.pushUsuarios(_usuario);
-    objBd.actualizarUsuariosBlockNotas(objSys.getUsuarios());
+    updateVectorUsuarios();
     objSys.idAumento();
     objBd.actualizarIdBlockNotas(objSys.getId());
+}
+
+void updateVectorUsuarios(){
+    objBd.actualizarUsuariosBlockNotas(objSys.getUsuarios());
 }
 
 int main()

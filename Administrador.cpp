@@ -53,8 +53,8 @@ Usuario Administrador::crearUsuario(int _id){
 
 
 
-void Administrador::modificarUsuario(int usuarioId, string nuevoNombre, string nuevoEmail){
-    for (auto& usuario : usuarios) {
+void Administrador::modificarUsuario(int usuarioId, string nuevoNombre, string nuevoEmail,vector<Usuario>& _usuarios){
+    for (auto& usuario : _usuarios) {
         if (usuario.getId() == usuarioId) {
             usuario.setNombre(nuevoNombre);
             usuario.setEmail(nuevoEmail);
@@ -65,15 +65,17 @@ void Administrador::modificarUsuario(int usuarioId, string nuevoNombre, string n
 }
 
 
-void Administrador::eliminarUsuario(int usuarioId){
+vector<Usuario> Administrador::eliminarUsuario(int usuarioId,vector<Usuario> _usuarios){
+    vector<Usuario> usuarios=_usuarios;
     for (auto it = usuarios.begin(); it != usuarios.end(); ++it) {
         if ((*it).getId() == usuarioId) {
             cout << "Usuario eliminado: " << (*it).getNombre() << endl;
             usuarios.erase(it);
-            return;
+            return usuarios;
         }
     }
     cout << "Usuario no encontrado." << endl;
+    return _usuarios;
 }
 
 void Administrador::gestionarActividades(){
