@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1727471534 source:c:\users\trx\desktop\profitsystem\profitsystem\main.cpp
+1727472082 source:c:\users\trx\desktop\profitsystem\profitsystem\main.cpp
 	<iostream>
 	<vector>
 	<string.h>
@@ -12,10 +12,10 @@
 	"Sistema.h"
 	"Usuario.h"
 
-1726585945 source:c:\users\trx\desktop\profitsystem\profitsystem\usuario.cpp
+1727568509 source:c:\users\trx\desktop\profitsystem\profitsystem\usuario.cpp
 	"Usuario.h"
 
-1726585945 c:\users\trx\desktop\profitsystem\profitsystem\usuario.h
+1727568440 c:\users\trx\desktop\profitsystem\profitsystem\usuario.h
 	<string>
 	<iostream>
 

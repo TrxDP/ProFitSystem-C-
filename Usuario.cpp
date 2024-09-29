@@ -49,7 +49,7 @@ string Usuario::getTipoUsuario(){
     return tipoUsuario;
 }
 
- bool Usuario::isActivo(){
+ bool Usuario::getActivo(){
     return activo;
  }
 

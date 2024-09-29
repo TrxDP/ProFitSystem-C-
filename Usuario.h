@@ -33,7 +33,7 @@ class Usuario
         string getEmail();
         string getContrasena();
         string getTipoUsuario();
-        bool isActivo();
+        bool getActivo();
 
 
         void setId(int _id);

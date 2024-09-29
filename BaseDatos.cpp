@@ -12,18 +12,19 @@ BaseDatos::~BaseDatos(){
 
 // Método para leer usuarios desde un archivo de texto
 vector<Usuario> BaseDatos::leerUsuariosBlockNotas() {
+    vector<Usuario> usuarios;
     ifstream archivo(archivoUsuarios);
     if (archivo.is_open()) {
-        vector<Usuario> usuarios;
         string linea;
         while (getline(archivo, linea)) {
             istringstream ss(linea);
-            string id, nombre, email, contrasena, tipoUsuario;
+            string id, nombre, email, contrasena, tipoUsuario,activo;
             getline(ss, id, ',');
             getline(ss, nombre, ',');
             getline(ss, email, ',');
             getline(ss, contrasena, ',');
             getline(ss, tipoUsuario, ',');
+            getline(ss,activo,',');
 
             Usuario usuario(stoi(id), nombre, email, contrasena, tipoUsuario);
             usuarios.push_back(usuario);
@@ -33,6 +34,7 @@ vector<Usuario> BaseDatos::leerUsuariosBlockNotas() {
     } else {
         cout << "No se pudo abrir el archivo de usuarios." << endl;
     }
+    return usuarios;
 }
 
 // Método para escribir usuarios en un archivo de texto
@@ -44,7 +46,8 @@ void BaseDatos::escribirUsuariosBlockNotas(vector<Usuario> _usuarios) {
                     << usuario.getNombre() << ","
                     << usuario.getEmail() << ","
                     << usuario.getContrasena() << ","
-                    << usuario.getTipoUsuario() << endl;
+                    << usuario.getTipoUsuario() << ","
+                    << usuario.getActivo() << endl;
         }
         archivo.close();
     } else {
@@ -72,7 +75,7 @@ void BaseDatos::eliminarUsuarioUserBlockNotas(int idUsuario, vector<Usuario>& _u
 }
 
 int BaseDatos::leerIdBlockNotas(){
-    int id;
+    int id = 0;
     ifstream archivo(archivoId);
     // Verifica si el archivo se abrió correctamente
     if(archivo.is_open()){
@@ -87,6 +90,7 @@ int BaseDatos::leerIdBlockNotas(){
         cout << "No se pudo abrir el archivo para escribir los usuarios." << endl;
         //return -1;
     }
+    return id;
 }
 
 void BaseDatos::escribirIdBlockNotas(int _id){
