@@ -18,15 +18,16 @@ vector<Usuario> BaseDatos::leerUsuariosBlockNotas() {
         string linea;
         while (getline(archivo, linea)) {
             istringstream ss(linea);
-            string id, nombre, email, contrasena, tipoUsuario,activo;
+            string id, nombre, email, contrasena, tipoUsuario,stringActivo;
+            bool activo;
             getline(ss, id, ',');
             getline(ss, nombre, ',');
             getline(ss, email, ',');
             getline(ss, contrasena, ',');
             getline(ss, tipoUsuario, ',');
-            getline(ss,activo,',');
-
-            Usuario usuario(stoi(id), nombre, email, contrasena, tipoUsuario);
+            getline(ss,stringActivo,',');
+            activo = (stringActivo == "true");
+            Usuario usuario(stoi(id), nombre, email, contrasena, tipoUsuario,activo);
             usuarios.push_back(usuario);
         }
         archivo.close();
@@ -42,12 +43,14 @@ void BaseDatos::escribirUsuariosBlockNotas(vector<Usuario> _usuarios) {
     ofstream archivo(archivoUsuarios);
     if (archivo.is_open()) {
         for (auto& usuario : _usuarios) {
+            string activo ="false";
+            if(usuario.getActivo()==true){activo="true";}
             archivo << usuario.getId() << ","
                     << usuario.getNombre() << ","
                     << usuario.getEmail() << ","
                     << usuario.getContrasena() << ","
                     << usuario.getTipoUsuario() << ","
-                    << usuario.getActivo() << endl;
+                    << activo << endl;
         }
         archivo.close();
     } else {

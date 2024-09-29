@@ -20,7 +20,7 @@ class Usuario
     public:
 
         //construtores
-        Usuario(int _id, string _nombre,string _email, string _contrasena, string _tipoUsuario);
+        Usuario(int _id, string _nombre,string _email, string _contrasena, string _tipoUsuario,bool _activo);
         Usuario();
         // Destructor
         virtual ~Usuario();

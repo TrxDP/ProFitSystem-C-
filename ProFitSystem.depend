@@ -12,25 +12,25 @@
 	"Sistema.h"
 	"Usuario.h"
 
-1727568509 source:c:\users\trx\desktop\profitsystem\profitsystem\usuario.cpp
+1727568836 source:c:\users\trx\desktop\profitsystem\profitsystem\usuario.cpp
 	"Usuario.h"
 
-1727568440 c:\users\trx\desktop\profitsystem\profitsystem\usuario.h
+1727569042 c:\users\trx\desktop\profitsystem\profitsystem\usuario.h
 	<string>
 	<iostream>
 
-1725934498 source:c:\users\trx\desktop\profitsystem\profitsystem\cliente.cpp
+1727569152 source:c:\users\trx\desktop\profitsystem\profitsystem\cliente.cpp
 	"Cliente.h"
 	"Usuario.h"
 
-1725934812 c:\users\trx\desktop\profitsystem\profitsystem\cliente.h
+1727569164 c:\users\trx\desktop\profitsystem\profitsystem\cliente.h
 	<vector>
 	"Usuario.h"
 
-1725860448 source:c:\users\trx\desktop\profitsystem\profitsystem\entrenador.cpp
+1727569199 source:c:\users\trx\desktop\profitsystem\profitsystem\entrenador.cpp
 	"Entrenador.h"
 
-1725855786 c:\users\trx\desktop\profitsystem\profitsystem\entrenador.h
+1727569211 c:\users\trx\desktop\profitsystem\profitsystem\entrenador.h
 	<vector>
 	"Usuario.h"
 	"Horario.h"
@@ -71,11 +71,11 @@
 	<string>
 	<vector>
 
-1727471849 source:c:\users\trx\desktop\profitsystem\profitsystem\administrador.cpp
+1727569132 source:c:\users\trx\desktop\profitsystem\profitsystem\administrador.cpp
 	"Administrador.h"
 	"Usuario.h"
 
-1727471848 c:\users\trx\desktop\profitsystem\profitsystem\administrador.h
+1727569091 c:\users\trx\desktop\profitsystem\profitsystem\administrador.h
 	<vector>
 	"Usuario.h"
 
@@ -93,15 +93,16 @@
 1726751032 c:\users\trx\desktop\profitsystem\profitsystem\menus.h
 	<iostream>
 
-1727471689 source:c:\users\trx\desktop\profitsystem\profitsystem\sistema.cpp
+1727570372 source:c:\users\trx\desktop\profitsystem\profitsystem\sistema.cpp
 	"Sistema.h"
+	<string>
 
 1727471689 c:\users\trx\desktop\profitsystem\profitsystem\sistema.h
 	<vector>
 	<iostream>
 	"Usuario.h"
 
-1726933398 source:c:\users\trx\desktop\profitsystem\profitsystem\basedatos.cpp
+1727570372 source:c:\users\trx\desktop\profitsystem\profitsystem\basedatos.cpp
 	"BaseDatos.h"
 
 1726933262 c:\users\trx\desktop\profitsystem\profitsystem\basedatos.h

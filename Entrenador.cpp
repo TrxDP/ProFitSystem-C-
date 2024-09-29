@@ -1,6 +1,6 @@
 #include "Entrenador.h"
 
-Entrenador::Entrenador(int _id, string _nombre, string _email, string _contrasena,vector<string> _especializaciones, int _experiencia):Usuario(_id,_nombre,_email,_contrasena,"Entrenador")
+Entrenador::Entrenador(int _id, string _nombre, string _email, string _contrasena,vector<string> _especializaciones, int _experiencia,bool _activo):Usuario(_id,_nombre,_email,_contrasena,"Entrenador",_activo)
 {
     //ctor
     especializaciones = _especializaciones;

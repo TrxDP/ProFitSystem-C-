@@ -28,7 +28,7 @@ void mostrarMenuCliente();
 void mostrarMenuEntrenador();
 void mostrarMenuAdministrador();
 void updateUsuarios(Usuario _usuario);
-void updateVectorUsuarios();
+void escribirBaseDatos();
 
 
 //Inicializando clases
@@ -151,7 +151,7 @@ void mostrarMenuAdministrador() {
                 cout<<"\n\t\t\tIngrese el id: ";
                 cin>>_id;
                 objSys.setUsuarios(objAdmin.eliminarUsuario(_id,objSys.getUsuarios()));
-                updateVectorUsuarios();
+                escribirBaseDatos();
                 break;
             case 5:
                 // Llamar función para gestionar actividades
@@ -253,12 +253,12 @@ void cargarBaseDatos(){
 
 void updateUsuarios(Usuario _usuario){
     objSys.pushUsuarios(_usuario);
-    updateVectorUsuarios();
+    escribirBaseDatos();
     objSys.idAumento();
     objBd.actualizarIdBlockNotas(objSys.getId());
 }
 
-void updateVectorUsuarios(){
+void escribirBaseDatos(){
     objBd.actualizarUsuariosBlockNotas(objSys.getUsuarios());
 }
 
@@ -267,6 +267,7 @@ int main()
     cargarBaseDatos();
     //mostrarMenuPorUsuario(login());
     inicio();
+    escribirBaseDatos();
 
     return 0;
 }

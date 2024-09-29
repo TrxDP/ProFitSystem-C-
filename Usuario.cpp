@@ -1,13 +1,13 @@
 #include "Usuario.h"
 
 
-Usuario::Usuario(int _id, string _nombre,string _email, string _contrasena, string _tipoUsuario){
+Usuario::Usuario(int _id, string _nombre,string _email, string _contrasena, string _tipoUsuario,bool _activo){
     id = _id;
     nombre = _nombre;
     email = _email;
     contrasena = _contrasena;
     tipoUsuario = _tipoUsuario;
-    activo = true;
+    activo = _activo;
 }
 
 

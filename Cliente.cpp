@@ -4,7 +4,7 @@
 
 
 
-Cliente::Cliente(int _id, string _nombre, string _email, string _contrasena):Usuario(_id,_nombre,_email,_contrasena,"Cliente")
+Cliente::Cliente(int _id, string _nombre, string _email, string _contrasena,bool _activo):Usuario(_id,_nombre,_email,_contrasena,"Cliente",_activo)
 {
     //ctor
     activo = true;

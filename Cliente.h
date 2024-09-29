@@ -19,7 +19,7 @@ class Cliente: public Usuario
         bool activo;
 
     public:
-        Cliente(int _id, string _nombre, string _email, string _contrasena);
+        Cliente(int _id, string _nombre, string _email, string _contrasena,bool _activo);
         virtual ~Cliente();
 
         bool getActivo();

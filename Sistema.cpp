@@ -1,4 +1,5 @@
 #include "Sistema.h"
+#include <string>
 
 Sistema::Sistema()
 {
@@ -46,6 +47,7 @@ void Sistema::verUsuarios(vector<Usuario> usuarios){
         cout<<"\nId: " <<usuario.getId();
         cout<<"\nEmail: " <<usuario.getEmail();
         cout<<"\nRol: " <<usuario.getTipoUsuario();
+        cout<<"\nActivo: " << boolalpha <<usuario.getActivo();
         cout<<endl;
         cantidad++;
     }
