@@ -68,10 +68,10 @@ void Administrador::modificarUsuario(int usuarioId, string nuevoNombre, string n
 
 vector<Usuario> Administrador::eliminarUsuario(int usuarioId,vector<Usuario> _usuarios){
     vector<Usuario> usuarios=_usuarios;
-    for (auto it = usuarios.begin(); it != usuarios.end(); ++it) {
-        if ((*it).getId() == usuarioId) {
-            cout << "Usuario eliminado: " << (*it).getNombre() << endl;
-            usuarios.erase(it);
+    for (auto& usuairo : usuarios) {
+        if (usuairo.getId()== usuarioId) {
+            cout << "Usuario eliminado: " << usuairo.getNombre() << endl;
+            usuairo.setActivo(false);
             return usuarios;
         }
     }
