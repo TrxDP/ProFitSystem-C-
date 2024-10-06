@@ -13,7 +13,7 @@ Autenticacion::~Autenticacion()
 
 Usuario Autenticacion::iniciarSesion(string email, string contrasena) {
     for (auto& usuario : usuariosRegistrados) {
-        if (usuario.getEmail() == email && usuario.getContrasena() == contrasena) {
+        if ((usuario.getEmail() == email && usuario.getContrasena() == contrasena)&& usuario.getActivo() == true) {
             cout << "Inicio de sesión exitoso. Bienvenido, " << usuario.getNombre() << "!" << endl;
             return usuario;
         }
