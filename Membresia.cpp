@@ -18,6 +18,10 @@ int Membresia::getIdMembresia(){
     return idMembresia;
 }
 
+int Membresia::getIdCliente(){
+    return idCliente;
+}
+
 string Membresia::getTipo(){
     return tipo;
 }
@@ -42,6 +46,9 @@ void Membresia::setTipo(string _tipo){
     tipo= _tipo;
 }
 
+void Membresia::setIdCliente(int _idCliente){
+    idCliente = _idCliente;
+}
 void Membresia::setCosto(double _costo){
     costo= _costo;
 }

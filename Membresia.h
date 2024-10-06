@@ -23,6 +23,7 @@ public:
 
     // Métodos getters
     int getIdMembresia();
+    int getIdCliente();
     string getTipo();
     double getCosto();
     int getDuracionDias();
@@ -31,6 +32,7 @@ public:
 
     // Métodos setters
     void setTipo(string _tipo);
+    void setIdCliente(int _idCliente);
     void setCosto(double _costo);
     void setDuracionDias(int _duracionDias);
     void setFechaInicio(string _fechaInicio);
