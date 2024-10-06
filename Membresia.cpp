@@ -1,6 +1,6 @@
 #include "Membresia.h"
 
-Membresia::Membresia(int _idMembresia, string _tipo, double _costo, int _duracionDias, string _fechaInicio, string _fechaFin)
+Membresia::Membresia(int _idMembresia,int _idCliente,string _tipo, double _costo, int _duracionDias, string _fechaInicio, string _fechaFin)
 {
     //ctor
 

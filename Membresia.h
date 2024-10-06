@@ -9,6 +9,7 @@ using namespace std;
 class Membresia {
 private:
     int idMembresia;          // Identificador único de la membresía
+    int idCliente;            // Identificador del cliente
     string tipo;              // Tipo de membresía (Mensual, Anual, VIP, etc.)
     double costo;             // Costo de la membresía
     int duracionDias;         // Duración de la membresía en días
@@ -17,7 +18,7 @@ private:
 
 public:
     // Constructor
-    Membresia(int _idMembresia, string _tipo, double _costo, int _duracionDias, string _fechaInicio, string _fechaFin);
+    Membresia(int _idMembresia,int _idCliente, string _tipo, double _costo, int _duracionDias, string _fechaInicio, string _fechaFin);
     virtual ~Membresia();
 
     // Métodos getters
