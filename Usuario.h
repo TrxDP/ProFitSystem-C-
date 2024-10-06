@@ -14,13 +14,14 @@ class Usuario
         string email;
         string contrasena;
         string tipoUsuario;
+        string membresia;
         bool activo; // Atributo para saber si el usuario está activo o no
 
 
     public:
 
         //construtores
-        Usuario(int _id, string _nombre,string _email, string _contrasena, string _tipoUsuario,bool _activo);
+        Usuario(int _id, string _nombre,string _email, string _contrasena, string _tipoUsuario,string _membresia,bool _activo);
         Usuario();
         // Destructor
         virtual ~Usuario();
@@ -33,6 +34,7 @@ class Usuario
         string getEmail();
         string getContrasena();
         string getTipoUsuario();
+        string getMembresia();
         bool getActivo();
 
 
@@ -41,6 +43,7 @@ class Usuario
         void setEmail(string _email);
         void setContrasena(string _contrasena);
         void setTipoUsuario(string _tipoUsuario);
+        void setMembresia(string _membresia);
         void setActivo(bool _activo);
 
         void setId();

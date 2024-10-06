@@ -47,6 +47,7 @@ void Sistema::verUsuarios(vector<Usuario> usuarios){
         cout<<"\nId: " <<usuario.getId();
         cout<<"\nEmail: " <<usuario.getEmail();
         cout<<"\nRol: " <<usuario.getTipoUsuario();
+        cout<<"\nMembresia: " <<usuario.getMembresia();
         cout<<"\nActivo: " << boolalpha <<usuario.getActivo();
         cout<<endl;
         cantidad++;

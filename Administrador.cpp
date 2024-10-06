@@ -2,7 +2,7 @@
 #include"Usuario.h"
 
 
-Administrador::Administrador(int _id, string _nombre, string _email, string _contrasena,bool _activo):Usuario(_id,_nombre,_email,_contrasena,"Administrador",_activo)
+Administrador::Administrador(int _id, string _nombre, string _email, string _contrasena,string _membresia,bool _activo):Usuario(_id,_nombre,_email,_contrasena,"Administrador",_membresia,_activo)
 {
     //ctor
 }
@@ -13,6 +13,8 @@ Administrador::Administrador(){
     email = "-";
     contrasena = "-";
     tipoUsuario = "-";
+    membresia="-";
+    activo = false;
 }
 
 Administrador::~Administrador()
@@ -49,7 +51,7 @@ Usuario Administrador::crearUsuario(int _id){
     if(opc==2){tipoUsuario=roles[1];}
     if(opc==3){tipoUsuario=roles[2];}
     cout << "\n\t\t\tUsuario creado: " << nombre << endl;
-    return Usuario(_id,nombre,email,contrasena,tipoUsuario,activo);
+    return Usuario(_id,nombre,email,contrasena,tipoUsuario,"null",activo);
 }
 
 

@@ -1,12 +1,13 @@
 #include "Usuario.h"
 
 
-Usuario::Usuario(int _id, string _nombre,string _email, string _contrasena, string _tipoUsuario,bool _activo){
+Usuario::Usuario(int _id, string _nombre,string _email, string _contrasena, string _tipoUsuario,string _membresia,bool _activo){
     id = _id;
     nombre = _nombre;
     email = _email;
     contrasena = _contrasena;
     tipoUsuario = _tipoUsuario;
+    membresia = _membresia;
     activo = _activo;
 }
 
@@ -49,6 +50,10 @@ string Usuario::getTipoUsuario(){
     return tipoUsuario;
 }
 
+string Usuario::getMembresia(){
+    return membresia;
+}
+
  bool Usuario::getActivo(){
     return activo;
  }
@@ -76,6 +81,9 @@ void Usuario::setTipoUsuario(string _tipoUsuario){
     tipoUsuario= _tipoUsuario;
 }
 
+void Usuario::setMembresia(string _membresia){
+    membresia = _membresia;
+}
 void Usuario::setActivo(bool _activo){
     activo=_activo;
 }

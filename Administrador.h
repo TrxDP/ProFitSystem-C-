@@ -9,7 +9,7 @@
 class Administrador: public Usuario
 {
     public:
-        Administrador(int _id, string _nombre, string _email, string _contrasena,bool _activo);
+        Administrador(int _id, string _nombre, string _email, string _contrasena,string _membresia,bool _activo);
         Administrador();
         virtual ~Administrador();
         bool getActivo();

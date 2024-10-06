@@ -21,7 +21,7 @@ class Entrenador : public Usuario
         vector<string> actividades;
 
     public:
-        Entrenador(int _id, string _nombre, string _email, string _contrasena,vector<string> _especializaciones, int _experiencia,bool _activo);
+        Entrenador(int _id, string _nombre, string _email, string _contrasena,vector<string> _especializaciones, int _experiencia,string _membresia,bool _activo);
         virtual ~Entrenador();
 
         // Métodos getters
