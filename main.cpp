@@ -29,6 +29,7 @@ void mostrarMenuEntrenador();
 void mostrarMenuAdministrador();
 void updateUsuarios(Usuario _usuario);
 void escribirBaseDatos();
+void crearMembresia();
 
 
 //Inicializando clases
@@ -37,6 +38,11 @@ Sistema objSys;
 Administrador objAdmin;
 
 vector<string> especializaciones = {"Yoga","Pesas","Piscina"};
+
+//Esta funcion sirve para establecer  la membresia que quiera pagar el cliente
+void crearMembresia(){
+
+}
 
 //El Cliente puede reservar actividades, ver sus pagos, modificar su información personal, y gestionar su membresía.
 void mostrarMenuCliente(){
