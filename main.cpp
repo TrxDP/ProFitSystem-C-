@@ -23,13 +23,18 @@ using namespace std;
 
 Usuario usuarioLogueado;
 
+
+//Test
+void test();
+
 //Inicializacion de funciones
+void cargarBaseDatos();
 void mostrarMenuCliente();
 void mostrarMenuEntrenador();
 void mostrarMenuAdministrador();
 void updateUsuarios(Usuario _usuario);
 void escribirBaseDatos();
-void crearMembresia();
+void menuMembresia();
 
 
 //Inicializando clases
@@ -39,9 +44,67 @@ Administrador objAdmin;
 
 vector<string> especializaciones = {"Yoga","Pesas","Piscina"};
 
-//Esta funcion sirve para establecer  la membresia que quiera pagar el cliente
-void crearMembresia(){
+void test(){
+    Usuario adminUser(1, "Admin", "admin@gym.com", "1234","Administrador","null",true);
+    usuarioLogueado = adminUser;
 
+    menuMembresia();
+}
+
+//Esta funcion sirve para establecer  la membresia que quiera pagar el cliente
+void menuMembresia(){
+    int opcion;
+    if(usuarioLogueado.getTipoUsuario()=="Administrador"){
+        do{
+            //CRUD para las membresias
+            cout << "\n\t--- Menu Membresias ---\n";
+            cout << "\t1. Ver Membresias\n";
+            cout << "\t2. Editar Membresias\n";
+            cout << "\t3. Eliminar Membresias\n";
+            cout << "\t4. Ver Todas Las Membresias\n";
+            cout << "\t5. Ver Pagos\n";
+            cout << "\t0. Salir\n";
+            cout << "\tElija una opción: ";
+            cin >> opcion;
+            switch(opcion){
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 0:
+                    break;
+                default:
+                    cout << "\tOpción no válida, intente de nuevo.\n";
+                    break;
+            }
+        }while(opcion!=0);
+    }else{
+        do{
+            cout << "\n\t--- Menu Membresias ---\n";
+            cout << "\t1. Infomacion de  Membresias\n";
+            cout << "\t2. Pagar Membresia\n";
+            cout << "\t0. Salir\n";
+            cout << "\tElija una opción: ";
+            cin >> opcion;
+            switch(opcion){
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 0:
+                    break;
+                default:
+                    cout << "\tOpción no válida, intente de nuevo.\n";
+                    break;
+            }
+        }while(opcion!=0);
+    }
 }
 
 //El Cliente puede reservar actividades, ver sus pagos, modificar su información personal, y gestionar su membresía.
@@ -215,6 +278,7 @@ void mostrarMenuPorUsuario(Usuario usuario) {
 
 
 void inicio(){
+    cargarBaseDatos();
     int opc;
     do{
         system("cls");
@@ -250,7 +314,7 @@ void inicio(){
                 break;
         }
     }while(opc != 4);
-
+    escribirBaseDatos();
 }
 void cargarBaseDatos(){
     objSys.setUsuarios(objBd.leerUsuariosBlockNotas());
@@ -270,10 +334,7 @@ void escribirBaseDatos(){
 
 int main()
 {
-    cargarBaseDatos();
-    //mostrarMenuPorUsuario(login());
-    inicio();
-    escribirBaseDatos();
-
+    //inicio();
+    test();
     return 0;
 }
