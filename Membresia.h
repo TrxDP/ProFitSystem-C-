@@ -15,10 +15,10 @@ private:
     int duracionDias;         // Duración de la membresía en días
     string fechaInicio;       // Fecha de inicio de la membresía
     string fechaFin;          // Fecha de finalización de la membresía
-
+    bool activo;
 public:
     // Constructor
-    Membresia(int _idMembresia,int _idCliente, string _nombre, double _costo, int _duracionDias, string _fechaInicio, string _fechaFin);
+    Membresia(int _idMembresia,int _idCliente, string _nombre, double _costo, int _duracionDias, string _fechaInicio, string _fechaFin, bool _activo);
     Membresia();//Sobrecarga de constructor
     virtual ~Membresia();
 
@@ -30,6 +30,7 @@ public:
     int getDuracionDias();
     string getFechaInicio();
     string getFechaFin();
+    bool getActivo();
 
     // Métodos setters
     void setNombre(string _nombre);
@@ -38,6 +39,7 @@ public:
     void setDuracionDias(int _duracionDias);
     void setFechaInicio(string _fechaInicio);
     void setFechaFin(string _fechaFin);
+    void setActivo(bool _activo);
 
     //Sobrecarga de setters
     void setNombre();

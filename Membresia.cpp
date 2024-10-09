@@ -1,6 +1,6 @@
 #include "Membresia.h"
 
-Membresia::Membresia(int _idMembresia,int _idCliente,string _nombre, double _costo, int _duracionDias, string _fechaInicio, string _fechaFin)
+Membresia::Membresia(int _idMembresia,int _idCliente,string _nombre, double _costo, int _duracionDias, string _fechaInicio, string _fechaFin , bool _activo)
 {
     //ctor
     idMembresia = _idMembresia;
@@ -10,6 +10,7 @@ Membresia::Membresia(int _idMembresia,int _idCliente,string _nombre, double _cos
     duracionDias =_duracionDias;
     fechaInicio = _fechaInicio;
     fechaFin = _fechaFin;
+    activo = _activo;
 }
 
 Membresia::Membresia(){
@@ -21,6 +22,7 @@ Membresia::Membresia(){
     duracionDias =0;
     fechaInicio = "-";
     fechaFin = "-";
+    activo = false;
 }
 
 Membresia::~Membresia()
@@ -58,7 +60,9 @@ string Membresia::getFechaFin(){
     return fechaFin;
 }
 
-
+bool Membresia::getActivo(){
+    return activo;
+}
 
 void Membresia::setNombre(string _nombre){
     nombre= _nombre;
@@ -82,7 +86,9 @@ void Membresia::setFechaInicio(string _fechaInicio){
 void Membresia::setFechaFin(string _fechaFin){
     fechaFin= _fechaFin;
 }
-
+void Membresia::setActivo(bool _activo){
+    activo=_activo;
+}
 
 void Membresia::setNombre(){
     cout << "\n\t\t\t---------------------------------";
