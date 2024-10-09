@@ -5,6 +5,7 @@ Sistema::Sistema()
 {
     //ctor
     usuarios;
+    membresias;
     id = 0;
     idFacturas= 0;
 }
@@ -18,6 +19,9 @@ vector<Usuario> Sistema::getUsuarios(){
     return usuarios;
 }
 
+vector<Membresia> Sistema::getMembresias(){
+    return membresias;
+}
 /*
 vector<Usuario*> Sistema::getCopiaUsuarios(){
     return usuarioscopia;
@@ -28,6 +32,10 @@ int Sistema::getId(){
 }
 int Sistema::getIdFacturas(){
     return idFacturas;
+}
+
+void Sistema::setMembresias(vector<Membresia> _membresias){
+    membresias = _membresias;
 }
 
 void Sistema::setId(int _id){
@@ -49,6 +57,30 @@ void Sistema::verUsuarios(vector<Usuario> usuarios){
         cout<<"\nRol: " <<usuario.getTipoUsuario();
         cout<<"\nMembresia: " <<usuario.getMembresia();
         cout<<"\nActivo: " << boolalpha <<usuario.getActivo();
+        cout<<endl;
+        cantidad++;
+    }
+}
+
+void Sistema::verMembresias(vector<Membresia> _membresias, vector<Usuario> _usuarios){
+    int cantidad = 1;
+    for(auto& membresia : _membresias){
+        string nombreCliente;
+        for(auto& usuario : _usuarios){
+            if(membresia.getIdCliente()==usuario.getId()){nombreCliente = usuario.getNombre();}
+        }
+        cout<<"\t\t\t\n------------------------------";
+        cout<<"\t\t\t\n--------- Membresia #"<< cantidad <<" ---------";
+        cout<<"\t\t\t\n------------------------------";
+        cout<<"\nNombre: " <<membresia.getNombre();
+        cout<<"\nNombre Cliente: " <<nombreCliente;
+        cout<<"\nId membresia: " <<membresia.getIdMembresia();
+        cout<<"\nId Cliente: " <<membresia.getIdCliente();
+        cout<<"\nCosto: " <<membresia.getCosto();
+        cout<<"\nDuracion: " <<membresia.getDuracionDias();
+        cout<<"\nFecha inicio: " <<membresia.getFechaInicio();
+        cout<<"\nFecha fin: " <<membresia.getFechaFin();
+        cout<<"\nActivo: " << boolalpha <<membresia.getActivo();
         cout<<endl;
         cantidad++;
     }

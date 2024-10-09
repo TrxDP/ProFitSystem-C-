@@ -9,6 +9,7 @@
 
 
 #include "Usuario.h"
+#include "Membresia.h"
 
 using namespace std;
 
@@ -21,6 +22,7 @@ class Sistema
 
         // getters
         vector<Usuario> getUsuarios();
+        vector<Membresia> getMembresias();
         //vector<Usuario*> getCopiaUsuarios();
         int getId();
         int getIdFacturas();
@@ -29,10 +31,12 @@ class Sistema
 
         void setUsuarios(vector<Usuario> _Usuarios);
         void setUsuariosCopia(vector<Usuario> _usuarios);
+        void setMembresias(vector<Membresia> _membresias);
         void setId(int _id);
         void setIdFacturas(int _idFacturas);
 
         void verUsuarios(vector<Usuario> usuarios);
+        void verMembresias(vector<Membresia> _membresias,vector<Usuario> _usuarios);
 
         void idAumento();
         void idFactuasAumento();
@@ -44,6 +48,7 @@ class Sistema
 
     private:
         vector<Usuario> usuarios;
+        vector<Membresia> membresias;
         //vector<Usuario*> usuarioscopia;
         int id;
         int idFacturas;

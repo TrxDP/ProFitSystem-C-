@@ -334,7 +334,7 @@ void escribirBaseDatos(){
 
 int main()
 {
-    //inicio();
-    test();
+    inicio();
+    //test();
     return 0;
 }
