@@ -45,7 +45,7 @@ Administrador objAdmin;
 vector<string> especializaciones = {"Yoga","Pesas","Piscina"};
 
 void test(){
-    Usuario adminUser(1, "Admin", "admin@gym.com", "1234","Administrador","null",true);
+    Usuario adminUser(1, "Admin", "admin@gym.com", "1234","Cliente","null",true);
     usuarioLogueado = adminUser;
 
     menuMembresia();
@@ -89,6 +89,7 @@ void menuMembresia(){
             cout << "\n\t--- Menu Membresias ---\n";
             cout << "\t1. Infomacion de  Membresias\n";
             cout << "\t2. Pagar Membresia\n";
+            cout << "\t3. Actualizar Membresia\n";
             cout << "\t0. Salir\n";
             cout << "\tElija una opción: ";
             cin >> opcion;
