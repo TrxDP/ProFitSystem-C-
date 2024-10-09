@@ -6,6 +6,7 @@
 #include<fstream>
 #include<sstream>
 #include"Usuario.h"
+#include"Membresia.h"
 
 
 using namespace std;
@@ -28,10 +29,17 @@ class BaseDatos
         void escribirIdBlockNotas(int _id);
         void actualizarIdBlockNotas(int _id);
 
+        //Membresias
+        vector<Membresia> leerMembresiasBlockNotas();
+        void escribirMembresiasBlockNotas(vector<Membresia> _membresias);
+        void actualizarMembresiasBlockNotas(vector<Membresia> _membresias);
+
+
 
     protected:
 
     private:
+        const string archivoMembresias = "membresias.txt";
         const string archivoUsuarios = "usuarios.txt";
         const string archivoId = "id.txt";
 };

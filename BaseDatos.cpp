@@ -115,3 +115,59 @@ void BaseDatos::escribirIdBlockNotas(int _id){
 void BaseDatos::actualizarIdBlockNotas(int _id){
     escribirIdBlockNotas(_id);
 }
+
+// Método para leer las membresias desde un archivo de texto
+vector<Membresia> BaseDatos::leerMembresiasBlockNotas() {
+    vector<Membresia> membresias;
+    ifstream archivo(archivoMembresias);
+    if (archivo.is_open()) {
+        string linea;
+        while (getline(archivo, linea)) {
+            istringstream ss(linea);
+            string idMembresia, idCliente, nombre, costo, duracionDias,fechaInicio,fechaFin,stringActivo;
+            bool activo;
+            getline(ss, idMembresia, ',');
+            getline(ss, idCliente, ',');
+            getline(ss, nombre, ',');
+            getline(ss, costo, ',');
+            getline(ss, duracionDias, ',');
+            getline(ss, fechaInicio, ',');
+            getline(ss, fechaFin,',');
+            activo = (stringActivo == "true");
+            Membresia membresia(stoi(idMembresia), stoi(idCliente), nombre, stoi(costo), stoi(duracionDias),fechaInicio,fechaFin,activo);
+            membresias.push_back(membresia);
+        }
+        archivo.close();
+        return membresias;
+    } else {
+        cout << "No se pudo abrir el archivo de membresias." << endl;
+    }
+    return membresias;
+}
+
+
+// Método para escribir las membresias en un archivo de texto
+void BaseDatos::escribirMembresiasBlockNotas(vector<Membresia> _membresias){
+    ofstream archivo(archivoMembresias);
+    if (archivo.is_open()) {
+        for (auto& membresia : _membresias) {
+            string activo ="false";
+            if(membresia.getActivo()==true){activo="true";}
+            archivo << membresia.getIdMembresia() << ","
+                    << membresia.getIdCliente() << ","
+                    << membresia.getNombre() << ","
+                    << membresia.getCosto() << ","
+                    << membresia.getDuracionDias() << ","
+                    << membresia.getFechaInicio() << ","
+                    << membresia.getFechaFin() << ","
+                    << activo << endl;
+        }
+        archivo.close();
+    } else {
+        cout << "No se pudo abrir el archivo para escribir las membresias." << endl;
+    }
+}
+// Método para actualizar el archivo de membresias (sobreescribe el archivo)
+void BaseDatos::actualizarMembresiasBlockNotas(vector<Membresia> _membresias){
+    escribirMembresiasBlockNotas(_membresias);
+}

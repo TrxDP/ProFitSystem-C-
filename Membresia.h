@@ -19,7 +19,7 @@ private:
 public:
     // Constructor
     Membresia(int _idMembresia,int _idCliente, string _nombre, double _costo, int _duracionDias, string _fechaInicio, string _fechaFin);
-    Membresia();//Sobrecarga de costructor
+    Membresia();//Sobrecarga de constructor
     virtual ~Membresia();
 
     // Métodos getters
