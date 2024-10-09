@@ -1,11 +1,10 @@
 
 
 
-#include <iostream>
+#include<iostream>
 #include<vector>
 #include<string.h>
 #include<string>
-
 
 #include "Autenticacion.h"
 #include "Administrador.h"

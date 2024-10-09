@@ -102,3 +102,34 @@ void Sistema::pushUsuarios(Usuario _nuevoUsuario){
     usuarios.push_back(_nuevoUsuario);
 }
 
+
+string Sistema::fecha(){
+    // Obtener la fecha actual
+    time_t t = time(nullptr);
+    tm* now = localtime(&t);
+
+    // Crear un stream para formatear la fecha
+    ostringstream fecha_stream;
+    fecha_stream << (now->tm_mday < 10 ? "0" : "") << now->tm_mday << "/"
+                 << (now->tm_mon + 1 < 10 ? "0" : "") << (now->tm_mon + 1) << "/"
+                 << (now->tm_year + 1900);
+
+    return fecha_stream.str();
+}
+
+string Sistema::fechaHora(){
+    // Obtener la fecha y hora actual
+    time_t t = time(nullptr);
+    tm* now = localtime(&t);
+
+    // Crear un stream para formatear la fecha y la hora
+    ostringstream fecha_hora_stream;
+    fecha_hora_stream << (now->tm_mday < 10 ? "0" : "") << now->tm_mday << "/"
+                      << (now->tm_mon + 1 < 10 ? "0" : "") << (now->tm_mon + 1) << "/"
+                      << (now->tm_year + 1900) << " "
+                      << (now->tm_hour < 10 ? "0" : "") << now->tm_hour << ":"
+                      << (now->tm_min < 10 ? "0" : "") << now->tm_min << ":"
+                      << (now->tm_sec < 10 ? "0" : "") << now->tm_sec;
+
+    return fecha_hora_stream.str();
+}

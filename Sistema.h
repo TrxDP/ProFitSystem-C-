@@ -6,6 +6,8 @@
 #define SISTEMA_H
 #include <vector>
 #include<iostream>
+#include<ctime>
+#include<sstream>
 
 
 #include "Usuario.h"
@@ -41,8 +43,15 @@ class Sistema
         void idAumento();
         void idFactuasAumento();
 
+
         //Update
         void pushUsuarios(Usuario _nuevoUsuario);
+
+        //Funcion que me retorna la fecha en formato DD/MM/AAAA
+        string fecha();
+
+        //Funcion que me retorna la fecha y hora
+        string fechaHora();
 
     protected:
 
