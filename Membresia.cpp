@@ -85,23 +85,33 @@ void Membresia::setFechaFin(string _fechaFin){
 
 
 void Membresia::setNombre(){
-
+    cout << "\n\t\t\t---------------------------------";
+    cout << "\n\t\t\tIngrese el nombre de la membresia: ";
+    cin>>nombre;
 }
 
-void Membresia::setCosto(double _costo){
-    costo= _costo;
+void Membresia::setCosto(){
+    cout << "\n\t\t\t---------------------------------";
+    cout << "\n\t\t\tIngrese el costo de "<< nombre <<": ";
+    cin>>costo;
 }
 
-void Membresia::setDuracionDias(int _duracionDias){
-    duracionDias= _duracionDias;
+void Membresia::setDuracionDias(){
+    cout << "\n\t\t\t---------------------------------";
+    cout << "\n\t\t\tIngrese la duracion: ";
+    cin>>duracionDias;
 }
 
-void Membresia::setFechaInicio(string _fechaInicio){
-    fechaInicio= _fechaInicio;
+void Membresia::setFechaInicio(){
+    cout << "\n\t\t\t---------------------------------";
+    cout << "\n\t\t\tIngrese la fecha de inicio (DD/MM/AAAA): ";
+    cin>>fechaInicio;
 }
 
-void Membresia::setFechaFin(string _fechaFin){
-    fechaFin= _fechaFin;
+void Membresia::setFechaFin(){
+    cout << "\n\t\t\t---------------------------------";
+    cout << "\n\t\t\tIngrese la fecha de fin (DD/MM/AAAA): ";
+    cin>>fechaFin;
 }
 
 void Membresia::mostrarInformacion(){
