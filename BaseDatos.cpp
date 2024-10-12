@@ -133,6 +133,7 @@ vector<Membresia> BaseDatos::leerMembresiasBlockNotas() {
             getline(ss, duracionDias, ',');
             getline(ss, fechaInicio, ',');
             getline(ss, fechaFin,',');
+            getline(ss, stringActivo,',');
             activo = (stringActivo == "true");
             Membresia membresia(stoi(idMembresia), stoi(idCliente), nombre, stoi(costo), stoi(duracionDias),fechaInicio,fechaFin,activo);
             membresias.push_back(membresia);
