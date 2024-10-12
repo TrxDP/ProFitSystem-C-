@@ -167,7 +167,47 @@ void BaseDatos::escribirMembresiasBlockNotas(vector<Membresia> _membresias){
         cout << "No se pudo abrir el archivo para escribir las membresias." << endl;
     }
 }
+
+
 // Método para actualizar el archivo de membresias (sobreescribe el archivo)
 void BaseDatos::actualizarMembresiasBlockNotas(vector<Membresia> _membresias){
     escribirMembresiasBlockNotas(_membresias);
+}
+
+
+int BaseDatos::leerIdMembresiasBlockNotas(){
+    int idMembresias = 0;
+    ifstream archivo(archivoIdMembresias);
+    // Verifica si el archivo se abrió correctamente
+    if(archivo.is_open()){
+        string linea;
+        //Lee la linea del archivo
+        getline(archivo,linea);
+        idMembresias=stoi(linea);
+        // Cierra el archivo
+        archivo.close();
+        return idMembresias;
+    }else{
+        cout << "No se pudo abrir el archivo para escribir los usuarios." << endl;
+        //return -1;
+    }
+    return idMembresias;
+}
+
+void BaseDatos::escribirIdMembresiasBlockNotas(int _idMembresias){
+    ofstream archivo(archivoIdMembresias);
+    // Verifica si el archivo se abrió correctamente
+    if (archivo.is_open()) {
+        // Escribe en el archivo
+        archivo << _idMembresias;
+
+        // Cierra el archivo
+        archivo.close();
+    } else {
+        cerr << "No se pudo abrir el archivo." <<endl;
+    }
+}
+
+void BaseDatos::actualizarIdMembresiasBlockNotas(int _idMembresias){
+    escribirIdMembresiasBlockNotas(_idMembresias);
 }

@@ -28,6 +28,7 @@ class Sistema
         //vector<Usuario*> getCopiaUsuarios();
         int getId();
         int getIdFacturas();
+        int getIdMembresias();
 
         // setters
 
@@ -36,16 +37,22 @@ class Sistema
         void setMembresias(vector<Membresia> _membresias);
         void setId(int _id);
         void setIdFacturas(int _idFacturas);
+        void setIdMembresias(int _idMembresias);
 
         void verUsuarios(vector<Usuario> usuarios);
-        void verMembresias(vector<Membresia> _membresias,vector<Usuario> _usuarios);
+        void verMembresias(Usuario userActivo,vector<Membresia> _membresias,vector<Usuario> _usuarios);
 
         void idAumento();
         void idFactuasAumento();
+        void idMembresiasAumento();
 
 
         //Update
         void pushUsuarios(Usuario _nuevoUsuario);
+        void pushMembresias(Membresia _nuevaMembresia);
+
+        //retorna valores de las listas
+        Usuario getUsuario(int _codigo);
 
         //Funcion que me retorna la fecha en formato DD/MM/AAAA
         string fecha();
@@ -61,6 +68,7 @@ class Sistema
         //vector<Usuario*> usuarioscopia;
         int id;
         int idFacturas;
+        int idMembresias;
 
 };
 

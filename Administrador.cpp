@@ -56,15 +56,65 @@ Usuario Administrador::crearUsuario(int _id){
 
 
 
-void Administrador::modificarUsuario(int usuarioId, string nuevoNombre, string nuevoEmail,vector<Usuario>& _usuarios){
-    for (auto& usuario : _usuarios) {
-        if (usuario.getId() == usuarioId) {
-            usuario.setNombre(nuevoNombre);
-            usuario.setEmail(nuevoEmail);
-            cout << "Usuario modificado: " << nuevoNombre << endl;
-            return;
+vector<Usuario> Administrador::modificarUsuario(int usuarioId,vector<Usuario> _usuarios,vector<Membresia> _membresias){
+    int opcion;
+    cout << "\n\t--- Editar Usuario ---\n";
+    cout << "\t1. Editar nombre\n";
+    cout << "\t2. Editar Membresia\n";
+    cout << "\t3. Editar Correo\n";
+    cout << "\t4. Editar Contrasena\n";
+    cout << "\t0. Salir\n";
+    cout << "\tElija una opción: ";
+    cin>>opcion;
+    if(opcion!=0){
+       while(opcion<1 || opcion>4){
+            cout << "\nOpcion invalida ";
+            cout << "\nIngrese nuevamente la opcion: ";
+            cin>>opcion;
+        }
+        for (auto& usuario : _usuarios) {
+            if (usuario.getId() == usuarioId) {
+                if(opcion == 1){
+                    string nuevoNombre;
+                    cout<<"\nIngrese el nuevo nombre: ";
+                    cin>>nuevoNombre;
+                    usuario.setNombre(nuevoNombre);
+                    cout << "\n\t\t---------------- Nombre modificado con exito! -------------- "<< endl;
+                    return _usuarios;
+                }
+                if(opcion == 2){
+                    for(auto& dato : _membresias){
+                        if(dato.getIdCliente() == usuarioId){
+                            usuario.setMembresia(dato.getNombre());
+                            cout << "\n\t\t---------------- Membresia modificado con exito! -------------- "<< endl;
+                            return _usuarios;
+                        }
+                    }
+                    cout << "\n\t\t---------------- Usuario no tiene membresia activa -------------- "<< endl;
+                    return _usuarios;
+                }
+                if(opcion == 3){
+                    string nuevoEmail;
+                    cout<<"\nIngrese el nuevo email: ";
+                    cin>>nuevoEmail;
+                    usuario.setEmail(nuevoEmail);
+                    cout << "\n\t\t---------------- Email modificado con exito! -------------- "<< endl;
+                    return _usuarios;
+                }
+                if(opcion == 4){
+                    string nuevaContrasena;
+                    cout<<"\nIngrese la nueva contrasena: ";
+                    cin>>nuevaContrasena;
+                    usuario.setContrasena(nuevaContrasena);
+                    cout << "\n\t\t---------------- Contrasena modificado con exito! -------------- "<< endl;
+                    return _usuarios;
+                }
+
+            }
         }
     }
+    return _usuarios;
+
 }
 
 

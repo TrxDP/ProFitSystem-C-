@@ -2,6 +2,7 @@
 #define BASEDATOS_H
 
 #include<iostream>
+#include<string>
 #include<vector>
 #include<fstream>
 #include<sstream>
@@ -34,11 +35,18 @@ class BaseDatos
         void escribirMembresiasBlockNotas(vector<Membresia> _membresias);
         void actualizarMembresiasBlockNotas(vector<Membresia> _membresias);
 
+        //idMembresias
+        int leerIdMembresiasBlockNotas();
+        void escribirIdMembresiasBlockNotas(int _idMembresias);
+        void actualizarIdMembresiasBlockNotas(int _idMembresias);
+
+
 
 
     protected:
 
     private:
+        const string archivoIdMembresias = "idMembresias.txt";
         const string archivoMembresias = "membresias.txt";
         const string archivoUsuarios = "usuarios.txt";
         const string archivoId = "id.txt";

@@ -19,6 +19,7 @@ Usuario::Usuario()
     email = "-";
     contrasena = "-";
     tipoUsuario = "-";
+    membresia = "-";
     activo = false;
 }
 

@@ -11,6 +11,7 @@
 #include "BaseDatos.h"
 #include "Cliente.h"
 #include "Entrenador.h"
+#include "Membresia.h"
 #include "Sistema.h"
 #include "Usuario.h"
 
@@ -27,14 +28,23 @@ Usuario usuarioLogueado;
 void test();
 
 //Inicializacion de funciones
-void cargarBaseDatos();
+
 void mostrarMenuCliente();
 void mostrarMenuEntrenador();
 void mostrarMenuAdministrador();
-void updateUsuarios(Usuario _usuario);
-void escribirBaseDatos();
 void menuMembresia();
 
+//------------------ inicializacion de funciones de la base de datos ----------------------
+void cargarBaseDatos();
+void updateUsuarios(Usuario _usuario);
+void escribirBaseDatos();
+void cargarBaseDatosMembresias();
+void updateMembresias(Membresia _membresia);
+
+
+
+//crear la membresia
+Membresia crearMembresias();
 
 //Inicializando clases
 BaseDatos objBd;
@@ -44,10 +54,42 @@ Administrador objAdmin;
 vector<string> especializaciones = {"Yoga","Pesas","Piscina"};
 
 void test(){
-    Usuario adminUser(1, "Admin", "admin@gym.com", "1234","Cliente","null",true);
-    usuarioLogueado = adminUser;
 
-    menuMembresia();
+}
+
+
+Membresia crearMembresias(){
+    Membresia nuevaMembresia;
+    if(usuarioLogueado.getTipoUsuario()=="Administrador"){
+        int codigo;
+        nuevaMembresia.setIdMembresia(objSys.getIdMembresias()); // recibe el id guardado en la clase sistema
+        cout<<"\n\t-------------------------";
+        cout<<"\nIngrese el codigo del cliente: ";
+        cin>>codigo;
+        Usuario user = objSys.getUsuario(codigo);
+        if(user.getId()!=0){
+            nuevaMembresia.setIdCliente(user.getId());
+        }else{nuevaMembresia.setIdCliente(0);}
+        nuevaMembresia.setNombre();
+        nuevaMembresia.setDuracionDias();
+        nuevaMembresia.setCosto();
+        nuevaMembresia.setFechaInicio(objSys.fechaHora());
+        nuevaMembresia.setFechaFin();
+        nuevaMembresia.setActivo(true);
+        updateMembresias(nuevaMembresia);
+        return nuevaMembresia;
+    }else{
+        nuevaMembresia.setIdMembresia(objSys.getIdMembresias());
+        nuevaMembresia.setIdCliente(usuarioLogueado.getId());
+        nuevaMembresia.setNombre();
+        nuevaMembresia.setDuracionDias();
+        nuevaMembresia.setCosto();
+        nuevaMembresia.setFechaInicio(objSys.fechaHora());
+        nuevaMembresia.setFechaFin();
+        nuevaMembresia.setActivo(true);
+        updateMembresias(nuevaMembresia);
+        return nuevaMembresia;
+    }
 }
 
 //Esta funcion sirve para establecer  la membresia que quiera pagar el cliente
@@ -57,11 +99,11 @@ void menuMembresia(){
         do{
             //CRUD para las membresias
             cout << "\n\t--- Menu Membresias ---\n";
-            cout << "\t1. Ver Membresias\n";
+            cout << "\t1. Informacion de Membresias\n";
             cout << "\t2. Editar Membresias\n";
             cout << "\t3. Eliminar Membresias\n";
             cout << "\t4. Ver Todas Las Membresias\n";
-            cout << "\t5. Ver Pagos\n";
+            cout << "\t5. Crear membresia\n";
             cout << "\t0. Salir\n";
             cout << "\tElija una opción: ";
             cin >> opcion;
@@ -73,8 +115,10 @@ void menuMembresia(){
                 case 3:
                     break;
                 case 4:
+                    objSys.verMembresias(usuarioLogueado,objSys.getMembresias(),objSys.getUsuarios());
                     break;
                 case 5:
+                    crearMembresias();
                     break;
                 case 0:
                     break;
@@ -87,8 +131,9 @@ void menuMembresia(){
         do{
             cout << "\n\t--- Menu Membresias ---\n";
             cout << "\t1. Infomacion de  Membresias\n";
-            cout << "\t2. Pagar Membresia\n";
+            cout << "\t2. crear Membresia\n";
             cout << "\t3. Actualizar Membresia\n";
+            cout << "\t4. Mi Membresia\n";
             cout << "\t0. Salir\n";
             cout << "\tElija una opción: ";
             cin >> opcion;
@@ -96,6 +141,17 @@ void menuMembresia(){
                 case 1:
                     break;
                 case 2:
+                    if(usuarioLogueado.getMembresia()== "null"){
+                            crearMembresias();
+                    }else{
+                        cout<<"\n\t --------------- Ya cuentas con membresia! ---------------------";
+                        }
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+                    objSys.verMembresias(usuarioLogueado,objSys.getMembresias(),objSys.getUsuarios());
                     break;
                 case 0:
                     break;
@@ -130,6 +186,7 @@ void mostrarMenuCliente(){
                 break;
             case 3:
                 // Llamar función para consultar membresía
+                menuMembresia();
                 break;
             case 4:
                 // Llamar función para ver pagos
@@ -190,15 +247,16 @@ void mostrarMenuAdministrador() {
     string _nombre,email,contrasena;
     Usuario _nuevoUsuario;
     do {
-        cout << "\n\t\t\t--- Menu Administrador ---\n";
-        cout << "\t\t\t1. Crear Usuario\n";
-        cout << "\t\t\t2. Mostrar Usuarios\n";
-        cout << "\t\t\t3. Modificar Usuario\n";
-        cout << "\t\t\t4. Eliminar Usuario\n";
-        cout << "\t\t\t5. Gestionar Actividades\n";
-        cout << "\t\t\t6. Consultar Estadísticas\n";
-        cout << "\t\t\t7. Salir\n";
-        cout << "\t\t\tElija una opción: ";
+        cout << "\n\t--- Menu Administrador ---\n";
+        cout << "\t1. Crear Usuario\n";
+        cout << "\t2. Mostrar Usuarios\n";
+        cout << "\t3. Modificar Usuario\n";
+        cout << "\t4. Eliminar Usuario\n";
+        cout << "\t5. Gestionar Actividades\n";
+        cout << "\t6. Consultar Estadísticas\n";
+        cout << "\t7. CRUD Membresias\n";
+        cout << "\t8. Salir\n";
+        cout << "\tElija una opción: ";
         cin >> opcion;
 
         switch (opcion) {
@@ -213,7 +271,10 @@ void mostrarMenuAdministrador() {
                 break;
             case 3:
                 // Llamar función para modificar usuario
-
+                cout<<"\n\t\t\tIngrese el id: ";
+                cin>>_id;
+                objSys.setUsuarios(objAdmin.modificarUsuario(_id,objSys.getUsuarios(),objSys.getMembresias()));
+                objBd.actualizarUsuariosBlockNotas(objSys.getUsuarios());
                 break;
             case 4:
                 // Llamar función para eliminar usuario
@@ -229,13 +290,16 @@ void mostrarMenuAdministrador() {
                 // Llamar función para consultar estadísticas
                 break;
             case 7:
+                menuMembresia();
+                break;
+            case 8:
                 cout << "Saliendo...\n";
                 break;
             default:
                 cout << "Opción no válida, intente de nuevo.\n";
                 break;
         }
-    } while (opcion != 7);
+    } while (opcion != 8);
 }
 
 
@@ -316,9 +380,16 @@ void inicio(){
     }while(opc != 4);
     escribirBaseDatos();
 }
+
+
+//---------------------------- Implimentacion de la base de datos ----------------------------
+
+
 void cargarBaseDatos(){
     objSys.setUsuarios(objBd.leerUsuariosBlockNotas());
     objSys.setId(objBd.leerIdBlockNotas());
+    cargarBaseDatosMembresias();
+
 }
 
 void updateUsuarios(Usuario _usuario){
@@ -331,6 +402,29 @@ void updateUsuarios(Usuario _usuario){
 void escribirBaseDatos(){
     objBd.actualizarUsuariosBlockNotas(objSys.getUsuarios());
 }
+
+void cargarBaseDatosMembresias(){
+    objSys.setMembresias(objBd.leerMembresiasBlockNotas());
+    objSys.setIdMembresias(objBd.leerIdMembresiasBlockNotas());
+}
+
+
+void updateMembresias(Membresia _membresia){
+    objSys.pushMembresias(_membresia);
+    objBd.escribirMembresiasBlockNotas(objSys.getMembresias());
+    objSys.idMembresiasAumento();
+    objBd.escribirIdMembresiasBlockNotas(objSys.getIdMembresias());
+    vector<Usuario> _usuarios = objSys.getUsuarios();
+    for(auto& user : _usuarios){
+        if(user.getId() == _membresia.getIdCliente()){
+            user.setMembresia(_membresia.getNombre());
+            objSys.setUsuarios(_usuarios);
+            objBd.actualizarUsuariosBlockNotas(objSys.getUsuarios());
+            cout<<"\n\t --------------- Membresia creada con exito! ---------------------";
+        }
+    }
+}
+
 
 int main()
 {

@@ -2,6 +2,7 @@
 #define ADMINISTRADOR_H
 #include<vector>
 #include"Usuario.h"
+#include"Membresia.h"
 
 
 
@@ -16,7 +17,7 @@ class Administrador: public Usuario
         void setActivo(bool _activo);
 
         Usuario crearUsuario(int _id);
-        void modificarUsuario(int usuarioId, string nuevoNombre, string nuevoEmail,vector<Usuario>& _usuarios);
+        vector<Usuario> modificarUsuario(int usuarioId,vector<Usuario> _usuarios,vector<Membresia> _membresias);
         vector<Usuario> eliminarUsuario(int usuarioId,vector<Usuario> _usuarios);
         void gestionarActividades();
         void agregarActividad(string nuevaActividad);

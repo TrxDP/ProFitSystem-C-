@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1728506422 source:c:\users\trx\desktop\profitsystem\profitsystem\main.cpp
+1728732912 source:c:\users\trx\desktop\profitsystem\profitsystem\main.cpp
 	<iostream>
 	<vector>
 	<string.h>
@@ -9,10 +9,11 @@
 	"BaseDatos.h"
 	"Cliente.h"
 	"Entrenador.h"
+	"Membresia.h"
 	"Sistema.h"
 	"Usuario.h"
 
-1728246300 source:c:\users\trx\desktop\profitsystem\profitsystem\usuario.cpp
+1728730063 source:c:\users\trx\desktop\profitsystem\profitsystem\usuario.cpp
 	"Usuario.h"
 
 1728246205 c:\users\trx\desktop\profitsystem\profitsystem\usuario.h
@@ -56,12 +57,17 @@
 	<iostream>
 	<string>
 
-1728462117 source:c:\users\trx\desktop\profitsystem\profitsystem\membresia.cpp
+1728732782 source:c:\users\trx\desktop\profitsystem\profitsystem\membresia.cpp
 	"Membresia.h"
 
-1728470540 c:\users\trx\desktop\profitsystem\profitsystem\membresia.h
+1728732365 c:\users\trx\desktop\profitsystem\profitsystem\membresia.h
 	<iostream>
 	<string>
+	<vector>
+	<map>
+	<ctime>
+	<iomanip>
+	<sstream>
 
 1725746259 source:c:\users\trx\desktop\profitsystem\profitsystem\horario.cpp
 	"Horario.h"
@@ -71,13 +77,14 @@
 	<string>
 	<vector>
 
-1728246075 source:c:\users\trx\desktop\profitsystem\profitsystem\administrador.cpp
+1728729544 source:c:\users\trx\desktop\profitsystem\profitsystem\administrador.cpp
 	"Administrador.h"
 	"Usuario.h"
 
-1728245980 c:\users\trx\desktop\profitsystem\profitsystem\administrador.h
+1728724999 c:\users\trx\desktop\profitsystem\profitsystem\administrador.h
 	<vector>
 	"Usuario.h"
+	"Membresia.h"
 
 1728193765 source:c:\users\trx\desktop\profitsystem\profitsystem\autenticacion.cpp
 	"Autenticacion.h"
@@ -93,11 +100,11 @@
 1726751032 c:\users\trx\desktop\profitsystem\profitsystem\menus.h
 	<iostream>
 
-1728506394 source:c:\users\trx\desktop\profitsystem\profitsystem\sistema.cpp
+1728731671 source:c:\users\trx\desktop\profitsystem\profitsystem\sistema.cpp
 	"Sistema.h"
 	<string>
 
-1728506394 c:\users\trx\desktop\profitsystem\profitsystem\sistema.h
+1728730841 c:\users\trx\desktop\profitsystem\profitsystem\sistema.h
 	<vector>
 	<iostream>
 	<ctime>
@@ -105,11 +112,12 @@
 	"Usuario.h"
 	"Membresia.h"
 
-1728461202 source:c:\users\trx\desktop\profitsystem\profitsystem\basedatos.cpp
+1728728440 source:c:\users\trx\desktop\profitsystem\profitsystem\basedatos.cpp
 	"BaseDatos.h"
 
-1728459913 c:\users\trx\desktop\profitsystem\profitsystem\basedatos.h
+1728727503 c:\users\trx\desktop\profitsystem\profitsystem\basedatos.h
 	<iostream>
+	<string>
 	<vector>
 	<fstream>
 	<sstream>
