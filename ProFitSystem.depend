@@ -124,65 +124,68 @@
 	"Usuario.h"
 	"Membresia.h"
 
-1728168957 source:d:\profitsystem\profitsystem-c-\actividad.cpp
+1728777748 source:d:\profitsystem\profitsystem-c-\actividad.cpp
 	"Actividad.h"
 
-1728168957 d:\profitsystem\profitsystem-c-\actividad.h
+1728777748 d:\profitsystem\profitsystem-c-\actividad.h
 	<iostream>
 
-1728170040 source:d:\profitsystem\profitsystem-c-\administrador.cpp
+1728777748 source:d:\profitsystem\profitsystem-c-\administrador.cpp
 	"Administrador.h"
 	"Usuario.h"
 
-1728168957 d:\profitsystem\profitsystem-c-\administrador.h
+1728777748 d:\profitsystem\profitsystem-c-\administrador.h
 	<vector>
 	"Usuario.h"
+	"Membresia.h"
 
-1728168957 d:\profitsystem\profitsystem-c-\usuario.h
+1728777748 d:\profitsystem\profitsystem-c-\usuario.h
 	<string>
 	<iostream>
 
-1728168957 source:d:\profitsystem\profitsystem-c-\autenticacion.cpp
+1728777748 source:d:\profitsystem\profitsystem-c-\autenticacion.cpp
 	"Autenticacion.h"
 
-1728168957 d:\profitsystem\profitsystem-c-\autenticacion.h
+1728777748 d:\profitsystem\profitsystem-c-\autenticacion.h
 	<iostream>
 	<vector>
 	"Usuario.h"
 
-1728168957 source:d:\profitsystem\profitsystem-c-\basedatos.cpp
+1728777748 source:d:\profitsystem\profitsystem-c-\basedatos.cpp
 	"BaseDatos.h"
 
-1728168957 d:\profitsystem\profitsystem-c-\basedatos.h
+1728777748 d:\profitsystem\profitsystem-c-\basedatos.h
 	<iostream>
+	<string>
 	<vector>
 	<fstream>
 	<sstream>
 	"Usuario.h"
+	"Membresia.h"
 
-1728168957 source:d:\profitsystem\profitsystem-c-\cliente.cpp
+1728777748 source:d:\profitsystem\profitsystem-c-\cliente.cpp
 	"Cliente.h"
 	"Usuario.h"
 
-1728168957 d:\profitsystem\profitsystem-c-\cliente.h
+1728777748 d:\profitsystem\profitsystem-c-\cliente.h
 	<vector>
 	"Usuario.h"
 
-1728168957 source:d:\profitsystem\profitsystem-c-\entrenador.cpp
+1728777748 source:d:\profitsystem\profitsystem-c-\entrenador.cpp
 	"Entrenador.h"
 
-1728168957 d:\profitsystem\profitsystem-c-\entrenador.h
+1728777748 d:\profitsystem\profitsystem-c-\entrenador.h
 	<vector>
 	"Usuario.h"
 	"Horario.h"
 	"Cliente.h"
 
-1728168957 d:\profitsystem\profitsystem-c-\horario.h
+1728777748 d:\profitsystem\profitsystem-c-\horario.h
 	<iostream>
 	<string>
 	<vector>
 
-1728168957 source:d:\profitsystem\profitsystem-c-\horario.cpp
+1728777748 source:d:\profitsystem\profitsystem-c-\horario.cpp
 	"Horario.h"
 
 1728168957 source:d:\profitsystem\profitsystem-c-\main.cpp
@@ -198,36 +201,44 @@
 	"Sistema.h"
 	"Usuario.h"
 
-1728168957 d:\profitsystem\profitsystem-c-\sistema.h
+1728777748 d:\profitsystem\profitsystem-c-\sistema.h
 	<vector>
 	<iostream>
+	<ctime>
+	<sstream>
 	"Usuario.h"
-
-1728168957 source:d:\profitsystem\profitsystem-c-\membresia.cpp
 	"Membresia.h"
 
-1728168957 d:\profitsystem\profitsystem-c-\membresia.h
+1728777748 source:d:\profitsystem\profitsystem-c-\membresia.cpp
+	"Membresia.h"
+
+1728777748 d:\profitsystem\profitsystem-c-\membresia.h
 	<iostream>
 	<string>
+	<vector>
+	<map>
+	<ctime>
+	<iomanip>
+	<sstream>
 
-1728168957 source:d:\profitsystem\profitsystem-c-\pago.cpp
+1728777748 source:d:\profitsystem\profitsystem-c-\pago.cpp
 	"Pago.h"
 
-1728168957 d:\profitsystem\profitsystem-c-\pago.h
+1728777748 d:\profitsystem\profitsystem-c-\pago.h
 	<iostream>
 	<string>
 
-1728168957 source:d:\profitsystem\profitsystem-c-\reserva.cpp
+1728777748 source:d:\profitsystem\profitsystem-c-\reserva.cpp
 	"Reserva.h"
 
-1728168957 d:\profitsystem\profitsystem-c-\reserva.h
+1728777748 d:\profitsystem\profitsystem-c-\reserva.h
 	<iostream>
 	<string>
 
-1728168957 source:d:\profitsystem\profitsystem-c-\sistema.cpp
+1728777748 source:d:\profitsystem\profitsystem-c-\sistema.cpp
 	"Sistema.h"
 	<string>
 
-1728168957 source:d:\profitsystem\profitsystem-c-\usuario.cpp
+1728777748 source:d:\profitsystem\profitsystem-c-\usuario.cpp
 	"Usuario.h"
 

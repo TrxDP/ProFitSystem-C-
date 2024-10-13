@@ -32,6 +32,10 @@ void test();
 void mostrarMenuCliente();
 void mostrarMenuEntrenador();
 void mostrarMenuAdministrador();
+
+
+// -------------------------- inicializacion de las funciones CRUDs --------------------------------------------
+void menuUsuario();
 void menuMembresia();
 
 //------------------ inicializacion de funciones de la base de datos ----------------------
@@ -57,40 +61,8 @@ void test(){
 
 }
 
+//------------------------------------- Implementacion de los CRUDs -------------------------
 
-Membresia crearMembresias(){
-    Membresia nuevaMembresia;
-    if(usuarioLogueado.getTipoUsuario()=="Administrador"){
-        int codigo;
-        nuevaMembresia.setIdMembresia(objSys.getIdMembresias()); // recibe el id guardado en la clase sistema
-        cout<<"\n\t-------------------------";
-        cout<<"\nIngrese el codigo del cliente: ";
-        cin>>codigo;
-        Usuario user = objSys.getUsuario(codigo);
-        if(user.getId()!=0){
-            nuevaMembresia.setIdCliente(user.getId());
-        }else{nuevaMembresia.setIdCliente(0);}
-        nuevaMembresia.setNombre();
-        nuevaMembresia.setDuracionDias();
-        nuevaMembresia.setCosto();
-        nuevaMembresia.setFechaInicio(objSys.fechaHora());
-        nuevaMembresia.setFechaFin();
-        nuevaMembresia.setActivo(true);
-        updateMembresias(nuevaMembresia);
-        return nuevaMembresia;
-    }else{
-        nuevaMembresia.setIdMembresia(objSys.getIdMembresias());
-        nuevaMembresia.setIdCliente(usuarioLogueado.getId());
-        nuevaMembresia.setNombre();
-        nuevaMembresia.setDuracionDias();
-        nuevaMembresia.setCosto();
-        nuevaMembresia.setFechaInicio(objSys.fechaHora());
-        nuevaMembresia.setFechaFin();
-        nuevaMembresia.setActivo(true);
-        updateMembresias(nuevaMembresia);
-        return nuevaMembresia;
-    }
-}
 
 //Esta funcion sirve para establecer  la membresia que quiera pagar el cliente
 void menuMembresia(){
@@ -162,6 +134,94 @@ void menuMembresia(){
         }while(opcion!=0);
     }
 }
+
+
+
+void menuUsuario(){
+    int opcion;
+    int _id;
+    Usuario _nuevoUsuario;
+    do {
+        cout << "\n\t--- Menu Usuarios ---\n";
+        cout << "\t1. Crear Usuario\n";
+        cout << "\t2. Mostrar Usuarios\n";
+        cout << "\t3. Modificar Usuario\n";
+        cout << "\t4. Eliminar Usuario\n";
+        cout << "\t5. Salir\n";
+        cout << "\tElija una opción: ";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                // Llamar función para crear usuario
+                _nuevoUsuario = objAdmin.crearUsuario(objSys.getId());
+                updateUsuarios(_nuevoUsuario);
+                break;
+            case 2:
+
+                    objSys.verUsuarios(objSys.getUsuarios());
+                break;
+            case 3:
+                // Llamar función para modificar usuario
+                cout<<"\n\t\t\tIngrese el id: ";
+                cin>>_id;
+                objSys.setUsuarios(objAdmin.modificarUsuario(_id,objSys.getUsuarios(),objSys.getMembresias()));
+                objBd.actualizarUsuariosBlockNotas(objSys.getUsuarios());
+                break;
+            case 4:
+                // Llamar función para eliminar usuario
+                cout<<"\n\t\t\tIngrese el id: ";
+                cin>>_id;
+                objSys.setUsuarios(objAdmin.eliminarUsuario(_id,objSys.getUsuarios()));
+                escribirBaseDatos();
+                break;
+            case 5:
+                cout << "Saliendo...\n";
+                break;
+            default:
+                cout << "Opción no válida, intente de nuevo.\n";
+                break;
+        }
+    } while (opcion != 5);
+}
+
+
+Membresia crearMembresias(){
+    Membresia nuevaMembresia;
+    if(usuarioLogueado.getTipoUsuario()=="Administrador"){
+        int codigo;
+        nuevaMembresia.setIdMembresia(objSys.getIdMembresias()); // recibe el id guardado en la clase sistema
+        cout<<"\n\t-------------------------";
+        cout<<"\nIngrese el codigo del cliente: ";
+        cin>>codigo;
+        Usuario user = objSys.getUsuario(codigo);
+        if(user.getId()!=0){
+            nuevaMembresia.setIdCliente(user.getId());
+        }else{nuevaMembresia.setIdCliente(0);}
+        nuevaMembresia.setNombre();
+        nuevaMembresia.setDuracionDias();
+        nuevaMembresia.setCosto();
+        nuevaMembresia.setFechaInicio(objSys.fechaHora());
+        nuevaMembresia.setFechaFin();
+        nuevaMembresia.setActivo(true);
+        updateMembresias(nuevaMembresia);
+        return nuevaMembresia;
+    }else{
+        nuevaMembresia.setIdMembresia(objSys.getIdMembresias());
+        nuevaMembresia.setIdCliente(usuarioLogueado.getId());
+        nuevaMembresia.setNombre();
+        nuevaMembresia.setDuracionDias();
+        nuevaMembresia.setCosto();
+        nuevaMembresia.setFechaInicio(objSys.fechaHora());
+        nuevaMembresia.setFechaFin();
+        nuevaMembresia.setActivo(true);
+        updateMembresias(nuevaMembresia);
+        return nuevaMembresia;
+    }
+}
+
+
+// ----------------------------- Implementacion de menus depende el rol -------------------------
 
 //El Cliente puede reservar actividades, ver sus pagos, modificar su información personal, y gestionar su membresía.
 void mostrarMenuCliente(){
@@ -243,15 +303,9 @@ void mostrarMenuEntrenador() {
 //El Administrador tiene acceso a todas las funcionalidades de la aplicación, como crear, modificar o eliminar usuarios y actividades, gestionar pagos, ver estadísticas, etc.
 void mostrarMenuAdministrador() {
     int opcion;
-    int _id;
-    string _nombre,email,contrasena;
-    Usuario _nuevoUsuario;
     do {
         cout << "\n\t--- Menu Administrador ---\n";
-        cout << "\t1. Crear Usuario\n";
-        cout << "\t2. Mostrar Usuarios\n";
-        cout << "\t3. Modificar Usuario\n";
-        cout << "\t4. Eliminar Usuario\n";
+        cout << "\t1. CRUD Usuarios\n";
         cout << "\t5. Gestionar Actividades\n";
         cout << "\t6. Consultar Estadísticas\n";
         cout << "\t7. CRUD Membresias\n";
@@ -261,27 +315,8 @@ void mostrarMenuAdministrador() {
 
         switch (opcion) {
             case 1:
-                // Llamar función para crear usuario
-                _nuevoUsuario = objAdmin.crearUsuario(objSys.getId());
-                updateUsuarios(_nuevoUsuario);
-                break;
-            case 2:
-
-                    objSys.verUsuarios(objSys.getUsuarios());
-                break;
-            case 3:
-                // Llamar función para modificar usuario
-                cout<<"\n\t\t\tIngrese el id: ";
-                cin>>_id;
-                objSys.setUsuarios(objAdmin.modificarUsuario(_id,objSys.getUsuarios(),objSys.getMembresias()));
-                objBd.actualizarUsuariosBlockNotas(objSys.getUsuarios());
-                break;
-            case 4:
-                // Llamar función para eliminar usuario
-                cout<<"\n\t\t\tIngrese el id: ";
-                cin>>_id;
-                objSys.setUsuarios(objAdmin.eliminarUsuario(_id,objSys.getUsuarios()));
-                escribirBaseDatos();
+                // llamar el menu CRUDs usuarios
+                menuUsuario();
                 break;
             case 5:
                 // Llamar función para gestionar actividades
